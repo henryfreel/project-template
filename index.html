@@ -483,6 +483,189 @@
     </form>
   </section>
 
+  <div class="section-divider">
+    <h2>Buttons</h2>
+    <p>Action buttons in various styles and sizes</p>
+  </div>
+  <section class="ds-page-section gap-sm">
+    <div class="text-content-heading align-center"><h2 class="heading">Button Variants</h2></div>
+    <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+      <button class="btn btn-brand">Primary</button>
+      <button class="btn btn-neutral">Neutral</button>
+      <button class="btn btn-subtle">Subtle</button>
+      <button class="btn btn-danger">Danger</button>
+    </div>
+    <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+      <button class="btn btn-brand btn-sm">Small Primary</button>
+      <button class="btn btn-neutral btn-sm">Small Neutral</button>
+      <button class="btn btn-subtle btn-sm">Small Subtle</button>
+    </div>
+    <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+      <button class="btn btn-brand disabled" disabled>Disabled Primary</button>
+      <button class="btn btn-neutral disabled" disabled>Disabled Neutral</button>
+    </div>
+  </section>
+
+  <div class="section-divider">
+    <h2>Avatars</h2>
+    <p>User profile images and initials in various sizes and shapes</p>
+  </div>
+  <section class="ds-page-section gap-sm">
+    <div class="text-content-heading align-center"><h2 class="heading">Circle Avatars</h2></div>
+    <div style="display: flex; gap: 16px; align-items: center;">
+      <div class="avatar avatar-initial"><span>A</span></div>
+      <div class="avatar avatar-initial avatar-md"><span>B</span></div>
+      <div class="avatar avatar-initial avatar-sm"><span>C</span></div>
+    </div>
+    <div class="text-content-heading align-center"><h2 class="heading">Square Avatars</h2></div>
+    <div style="display: flex; gap: 16px; align-items: center;">
+      <div class="avatar avatar-initial avatar-square"><span>A</span></div>
+      <div class="avatar avatar-initial avatar-square avatar-md"><span>B</span></div>
+      <div class="avatar avatar-initial avatar-square avatar-sm"><span>C</span></div>
+    </div>
+    <div class="text-content-heading align-center"><h2 class="heading">Avatar Group</h2></div>
+    <div class="avatar-group">
+      <div class="avatar avatar-initial"><span>A</span></div>
+      <div class="avatar avatar-initial"><span>B</span></div>
+      <div class="avatar avatar-initial"><span>C</span></div>
+      <div class="avatar avatar-initial"><span>D</span></div>
+    </div>
+  </section>
+
+  <div class="section-divider">
+    <h2>Tags</h2>
+    <p>Labels and badges for categorization and status</p>
+  </div>
+  <section class="ds-page-section gap-sm">
+    <div class="text-content-heading align-center"><h2 class="heading">Primary Tags</h2></div>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+      <span class="tag tag-brand">Brand<button class="tag-dismiss" aria-label="Remove">&times;</button></span>
+      <span class="tag tag-danger">Danger<button class="tag-dismiss" aria-label="Remove">&times;</button></span>
+      <span class="tag tag-positive">Positive<button class="tag-dismiss" aria-label="Remove">&times;</button></span>
+      <span class="tag tag-warning">Warning<button class="tag-dismiss" aria-label="Remove">&times;</button></span>
+      <span class="tag tag-neutral">Neutral<button class="tag-dismiss" aria-label="Remove">&times;</button></span>
+    </div>
+    <div class="text-content-heading align-center"><h2 class="heading">Secondary Tags</h2></div>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+      <span class="tag tag-brand secondary">Brand</span>
+      <span class="tag tag-danger secondary">Danger</span>
+      <span class="tag tag-positive secondary">Positive</span>
+      <span class="tag tag-warning secondary">Warning</span>
+      <span class="tag tag-neutral secondary">Neutral</span>
+    </div>
+  </section>
+
+  <div class="section-divider">
+    <h2>Tabs</h2>
+    <p>Tabbed navigation for switching between content panels</p>
+  </div>
+  <section class="ds-page-section gap-sm">
+    <div class="ds-tabs" id="demo-tabs">
+      <button class="tab active" data-tab="tab-1">Overview</button>
+      <button class="tab" data-tab="tab-2">Features</button>
+      <button class="tab" data-tab="tab-3">Pricing</button>
+      <button class="tab" data-tab="tab-4">Reviews</button>
+      <button class="tab" data-tab="tab-5">Support</button>
+    </div>
+    <div class="tab-content">
+      <div class="tab-panel active" id="tab-1"><p class="body-text">Overview panel content. Switch tabs to see different content.</p></div>
+      <div class="tab-panel" id="tab-2"><p class="body-text">Features panel content with details about functionality.</p></div>
+      <div class="tab-panel" id="tab-3"><p class="body-text">Pricing panel content showing available plans.</p></div>
+      <div class="tab-panel" id="tab-4"><p class="body-text">Reviews panel content with user feedback.</p></div>
+      <div class="tab-panel" id="tab-5"><p class="body-text">Support panel content with help resources.</p></div>
+    </div>
+  </section>
+
+  <div class="section-divider">
+    <h2>Tooltips</h2>
+    <p>Contextual information on hover</p>
+  </div>
+  <section class="ds-page-section gap-sm">
+    <div style="display: flex; gap: 48px; flex-wrap: wrap; align-items: center; justify-content: center; padding: 48px 0;">
+      <div class="tooltip-wrapper">
+        <button class="btn btn-neutral">Hover Top</button>
+        <div class="tooltip top"><span class="tooltip-title">Title</span><span class="tooltip-body">Body text</span></div>
+      </div>
+      <div class="tooltip-wrapper">
+        <button class="btn btn-neutral">Hover Bottom</button>
+        <div class="tooltip bottom"><span class="tooltip-title">Title</span><span class="tooltip-body">Body text</span></div>
+      </div>
+      <div class="tooltip-wrapper">
+        <button class="btn btn-neutral">Hover Left</button>
+        <div class="tooltip left"><span class="tooltip-title">Title</span><span class="tooltip-body">Body text</span></div>
+      </div>
+      <div class="tooltip-wrapper">
+        <button class="btn btn-neutral">Hover Right</button>
+        <div class="tooltip right"><span class="tooltip-title">Title</span><span class="tooltip-body">Body text</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider">
+    <h2>Notifications</h2>
+    <p>Feedback messages and alerts</p>
+  </div>
+  <section class="ds-page-section gap-sm">
+    <div style="display: flex; gap: 24px; flex-wrap: wrap; justify-content: center;">
+      <div class="notification">
+        <svg class="notification-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="8" r="1" fill="currentColor"/><line x1="10" y1="10.5" x2="10" y2="14" stroke="currentColor" stroke-width="1.5"/></svg>
+        <div class="notification-stack">
+          <div class="notification-content"><p class="notification-title">Message sent</p><p class="notification-body">Your message has been delivered successfully.</p></div>
+          <div class="notification-actions"><button class="btn btn-brand btn-sm">View</button></div>
+        </div>
+        <button class="notification-dismiss" aria-label="Dismiss">&times;</button>
+      </div>
+      <div class="notification alert">
+        <svg class="notification-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="8" r="1" fill="currentColor"/><line x1="10" y1="10.5" x2="10" y2="14" stroke="currentColor" stroke-width="1.5"/></svg>
+        <div class="notification-stack">
+          <div class="notification-content"><p class="notification-title">Error occurred</p><p class="notification-body">Something went wrong. Please try again.</p></div>
+          <div class="notification-actions"><button class="btn btn-danger btn-sm">Retry</button></div>
+        </div>
+        <button class="notification-dismiss" aria-label="Dismiss">&times;</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider">
+    <h2>Dialog</h2>
+    <p>Modal overlay for focused content and actions</p>
+  </div>
+  <section class="ds-page-section gap-sm">
+    <button class="btn btn-brand" id="open-dialog">Open Dialog</button>
+  </section>
+  <div class="dialog-overlay" id="demo-dialog">
+    <div class="dialog-body">
+      <button class="dialog-dismiss" aria-label="Close">&times;</button>
+      <div class="dialog-text">
+        <h3 class="dialog-heading">Dialog Heading</h3>
+        <p class="dialog-description">This is a dialog component with a scrim overlay. It can contain any content — forms, confirmations, or informational messages.</p>
+      </div>
+      <div class="dialog-actions">
+        <button class="btn btn-neutral" id="close-dialog-cancel">Cancel</button>
+        <button class="btn btn-brand" id="close-dialog-confirm">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider">
+    <h2>Pagination</h2>
+    <p>Page navigation controls</p>
+  </div>
+  <section class="ds-page-section gap-sm">
+    <nav class="pagination">
+      <button class="pagination-prev disabled" disabled>&larr; Previous</button>
+      <div class="pagination-list">
+        <button class="pagination-page current">1</button>
+        <button class="pagination-page">2</button>
+        <button class="pagination-page">3</button>
+        <span class="pagination-gap">...</span>
+        <button class="pagination-page">67</button>
+        <button class="pagination-page">68</button>
+      </div>
+      <button class="pagination-next">Next &rarr;</button>
+    </nav>
+  </section>
+
   <!-- ============================================================
        FOOTER
        ============================================================ -->

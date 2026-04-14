@@ -30,4 +30,64 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!wasOpen) item.classList.add('open');
     });
   });
+
+  // Tabs
+  document.querySelectorAll('.ds-tabs').forEach(tabGroup => {
+    tabGroup.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabGroup.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const panelId = tab.getAttribute('data-tab');
+        if (panelId) {
+          const container = tabGroup.parentElement.querySelector('.tab-content');
+          if (container) {
+            container.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            const target = container.querySelector('#' + panelId);
+            if (target) target.classList.add('active');
+          }
+        }
+      });
+    });
+  });
+
+  // Dialog
+  const dialogOverlay = document.getElementById('demo-dialog');
+  const openBtn = document.getElementById('open-dialog');
+  const closeBtns = [
+    document.getElementById('close-dialog-cancel'),
+    document.getElementById('close-dialog-confirm'),
+    dialogOverlay ? dialogOverlay.querySelector('.dialog-dismiss') : null
+  ].filter(Boolean);
+
+  if (openBtn && dialogOverlay) {
+    openBtn.addEventListener('click', () => dialogOverlay.classList.add('open'));
+    closeBtns.forEach(btn => btn.addEventListener('click', () => dialogOverlay.classList.remove('open')));
+    dialogOverlay.addEventListener('click', (e) => {
+      if (e.target === dialogOverlay) dialogOverlay.classList.remove('open');
+    });
+  }
+
+  // Notification dismiss
+  document.querySelectorAll('.notification-dismiss').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.notification').style.display = 'none';
+    });
+  });
+
+  // Tag dismiss
+  document.querySelectorAll('.tag-dismiss').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.tag').style.display = 'none';
+    });
+  });
+
+  // Pagination
+  document.querySelectorAll('.pagination').forEach(nav => {
+    nav.querySelectorAll('.pagination-page').forEach(page => {
+      page.addEventListener('click', () => {
+        nav.querySelectorAll('.pagination-page').forEach(p => p.classList.remove('current'));
+        page.classList.add('current');
+      });
+    });
+  });
 });
