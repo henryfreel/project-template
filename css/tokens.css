@@ -1,6 +1,7 @@
-:root {
+:root,
+[data-theme="light"] {
   /* ========================================
-     Colors — Background
+     Colors — Background (Light)
      ======================================== */
   --bg-default: #ffffff;
   --bg-secondary: #f5f5f5;
@@ -10,7 +11,7 @@
   --bg-scrim: rgba(255, 255, 255, 0.8);
 
   /* ========================================
-     Colors — Text
+     Colors — Text (Light)
      ======================================== */
   --text-default: #1e1e1e;
   --text-secondary: #757575;
@@ -19,17 +20,62 @@
   --text-on-brand-secondary: #1e1e1e;
 
   /* ========================================
-     Colors — Border
+     Colors — Border (Light)
      ======================================== */
   --border-default: #d9d9d9;
   --border-brand: #2c2c2c;
   --border-neutral: #767676;
 
   /* ========================================
-     Colors — Misc
+     Colors — Icon (Light)
+     ======================================== */
+  --icon-default: #1e1e1e;
+
+  /* ========================================
+     Colors — Misc (Light)
      ======================================== */
   --color-placeholder: #e3e3e3;
+}
 
+[data-theme="dark"] {
+  /* ========================================
+     Colors — Background (Dark)
+     ======================================== */
+  --bg-default: #1e1e1e;
+  --bg-secondary: #2c2c2c;
+  --bg-brand: #f5f5f5;
+  --bg-brand-tertiary: #444444;
+  --bg-neutral-tertiary: #303030;
+  --bg-scrim: rgba(0, 0, 0, 0.8);
+
+  /* ========================================
+     Colors — Text (Dark)
+     ======================================== */
+  --text-default: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-tertiary: rgba(255, 255, 255, 0.4);
+  --text-on-brand: #1e1e1e;
+  --text-on-brand-secondary: #f5f5f5;
+
+  /* ========================================
+     Colors — Border (Dark)
+     ======================================== */
+  --border-default: #444444;
+  --border-brand: #f5f5f5;
+  --border-neutral: #949494;
+
+  /* ========================================
+     Colors — Icon (Dark)
+     ======================================== */
+  --icon-default: #ffffff;
+
+  /* ========================================
+     Colors — Misc (Dark)
+     ======================================== */
+  --color-placeholder: #303030;
+}
+
+:root {
   /* ========================================
      Spacing
      ======================================== */
