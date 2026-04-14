@@ -1,40 +1,72 @@
-# Project Template
+# Simple Design System
 
-A static HTML/CSS website deployed via Netlify.
+A static HTML/CSS component library based on a Figma design system, deployed via Netlify.
 
 ## Project Structure
 
 ```
-├── index.html          # Main HTML page
+├── index.html              # Component showcase page
 ├── css/
-│   ├── reset.css       # CSS reset / normalize
-│   └── styles.css      # Main stylesheet
+│   ├── reset.css           # CSS reset / normalize
+│   ├── tokens.css          # Design tokens (colors, spacing, typography)
+│   ├── components.css      # All component styles
+│   └── styles.css          # Global styles + Inter font import
 ├── js/
-│   └── main.js         # JavaScript entry point
+│   └── main.js             # Accordion toggle + interactive behavior
 ├── assets/
-│   ├── images/         # Image files
-│   └── fonts/          # Custom font files
-├── netlify.toml        # Netlify deployment config
+│   ├── images/             # Image files
+│   └── fonts/              # Custom font files
+├── netlify.toml            # Netlify deployment config
 └── .gitignore
 ```
+
+## Components
+
+### Layout
+- **Header** — Navigation with logo, pill links, and auth buttons
+- **Footer** — Branding, social links, and link columns
+
+### Hero Sections
+- **Hero Basic** — Centered title + subtitle
+- **Hero Actions** — Title + subtitle + button group
+- **Hero Newsletter** — Title + subtitle + email form
+- **Hero Form** — Title + subtitle + contact form
+- **Hero Image** — Background image with scrim overlay
+
+### Panel Sections
+- **Panel Image Content** — Image left, text right
+- **Panel Image Content Reverse** — Text left, image right
+- **Panel Image** — Full-width image
+- **Panel Image Double** — Two side-by-side images
+
+### Card Grids
+- **Card Grid Pricing** — Pricing tiers with toggle
+- **Card Grid Icon** — Icon + title + body cards
+- **Card Grid Content List** — Horizontal cards with image
+
+### Page Sections
+- **Page Accordion** — FAQ-style expandable items
+- **Page Newsletter** — Heading + newsletter form
+
+## Design Tokens
+
+All design tokens are defined as CSS custom properties in `css/tokens.css`. Update these values to theme the entire library:
+
+- Colors (background, text, border)
+- Spacing scale (4px–160px)
+- Typography (Inter font, sizes, weights)
+- Border radius and stroke
 
 ## Local Development
 
 Open `index.html` directly in a browser, or use a local server:
 
 ```bash
-# Using Python
 python3 -m http.server 8000
-
-# Using Node (npx)
+# or
 npx serve .
 ```
 
 ## Deployment
 
-This project deploys automatically to Netlify when changes are pushed to the `main` branch on GitHub.
-
-1. Push to GitHub
-2. Connect the repo in [Netlify](https://app.netlify.com)
-3. Set publish directory to `.` (root)
-4. Every push to `main` triggers a deploy
+Deploys automatically to Netlify on push to `main`.
