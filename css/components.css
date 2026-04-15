@@ -1837,7 +1837,7 @@ body.overlay-open {
 
 .ds-table th,
 .ds-table td {
-  padding: var(--space-300) var(--space-600);
+  padding: var(--space-300) var(--space-400);
   border-bottom: var(--stroke-border) solid var(--border-default);
   color: var(--text-default);
   font-weight: var(--weight-regular);
@@ -1846,6 +1846,7 @@ body.overlay-open {
 .ds-table thead th {
   font-weight: var(--weight-semibold);
   text-align: left;
+  border-bottom-width: 2px;
 }
 
 .ds-table tr:last-child td {
