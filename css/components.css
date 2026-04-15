@@ -1497,6 +1497,46 @@
 }
 
 /* ========================================
+   Icon Grid
+   ======================================== */
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: var(--space-400);
+  width: 100%;
+}
+
+.icon-grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-200);
+  padding: var(--space-300);
+  border-radius: var(--radius-200);
+  transition: background-color 0.2s ease;
+}
+
+.icon-grid-item:hover {
+  background-color: var(--bg-secondary);
+}
+
+.icon-grid-item svg {
+  width: 24px;
+  height: 24px;
+  color: var(--icon-default);
+}
+
+.icon-grid-item span {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-align: center;
+  word-break: break-word;
+  line-height: 1.2;
+}
+
+/* ========================================
    Dark Mode Overrides for hardcoded colors
    ======================================== */
 
