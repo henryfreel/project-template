@@ -446,7 +446,7 @@
     <h2>Drop Shadows <code>{tokens.css}</code></h2>
     <p>Elevation levels for layered surfaces</p>
   </div>
-  <section class="ds-page-section gap-sm">
+  <section class="ds-page-section gap-sm" style="background-color: var(--bg-secondary);">
 
     <div class="shadow-row">
       <div class="shadow-card" style="box-shadow: var(--shadow-100);">
@@ -485,7 +485,7 @@
     <h2>Inner Shadows <code>{tokens.css}</code></h2>
     <p>Inset depth effects for recessed surfaces</p>
   </div>
-  <section class="ds-page-section gap-sm">
+  <section class="ds-page-section gap-sm" style="background-color: var(--bg-secondary);">
 
     <div class="shadow-row">
       <div class="shadow-card" style="box-shadow: var(--inner-shadow-100);">
@@ -529,19 +529,27 @@
     <div class="blur-row">
       <div class="blur-item">
         <div class="blur-demo">
-          <div class="blur-demo-overlay" style="backdrop-filter: var(--blur-overlay);"></div>
+          <div class="blur-demo-content">Abc</div>
+        </div>
+        <div class="blur-meta">No blur<span>reference</span></div>
+      </div>
+      <div class="blur-item">
+        <div class="blur-demo">
+          <div class="blur-demo-content">Abc</div>
+          <div class="blur-demo-overlay" style="backdrop-filter: var(--blur-overlay); background: rgba(255,255,255,0.15);"></div>
         </div>
         <div class="blur-meta">--blur-overlay<span>backdrop-filter: blur(4px)</span></div>
       </div>
       <div class="blur-item">
-        <div class="blur-demo">
-          <div class="blur-demo-overlay" style="filter: var(--blur-layer);"></div>
+        <div class="blur-demo" style="filter: var(--blur-layer);">
+          <div class="blur-demo-content">Abc</div>
         </div>
         <div class="blur-meta">--blur-layer<span>filter: blur(4px)</span></div>
       </div>
       <div class="blur-item">
         <div class="blur-demo">
-          <div class="blur-demo-overlay" style="backdrop-filter: var(--blur-glass);"></div>
+          <div class="blur-demo-content">Abc</div>
+          <div class="blur-demo-overlay" style="backdrop-filter: var(--blur-glass); background: rgba(255,255,255,0.2);"></div>
         </div>
         <div class="blur-meta">--blur-glass<span>backdrop-filter: blur(4px)</span></div>
       </div>

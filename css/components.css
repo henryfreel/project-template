@@ -1588,9 +1588,10 @@
 
 .spacing-bar {
   height: 24px;
-  border-radius: var(--radius-100);
+  border-radius: 2px;
   background-color: var(--bg-brand);
   flex-shrink: 0;
+  min-width: 2px;
 }
 
 .spacing-label {
@@ -1660,7 +1661,6 @@
   height: 120px;
   border-radius: var(--radius-200);
   background-color: var(--bg-default);
-  border: var(--stroke-border) solid var(--border-default);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1736,20 +1736,37 @@
 }
 
 .blur-demo {
-  width: 160px;
-  height: 100px;
+  width: 180px;
+  height: 120px;
   border-radius: var(--radius-200);
   overflow: hidden;
   position: relative;
-  background: linear-gradient(135deg, var(--bg-positive), var(--bg-warning), var(--bg-danger));
+  background:
+    repeating-linear-gradient(
+      45deg,
+      var(--bg-positive) 0px, var(--bg-positive) 10px,
+      var(--bg-warning) 10px, var(--bg-warning) 20px,
+      var(--bg-danger) 20px, var(--bg-danger) 30px,
+      var(--bg-brand) 30px, var(--bg-brand) 40px
+    );
+}
+
+.blur-demo-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 32px;
+  font-weight: var(--weight-bold);
+  color: var(--text-on-danger);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 .blur-demo-overlay {
   position: absolute;
-  inset: 12px;
-  border-radius: var(--radius-100);
-  background: var(--bg-default);
-  opacity: 0.5;
+  inset: 0;
 }
 
 .blur-meta {
