@@ -1820,6 +1820,57 @@ body.overlay-open {
 }
 
 /* ========================================
+   Table
+   ======================================== */
+
+.ds-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: var(--text-body-small);
+  line-height: 1.4;
+  background-color: var(--bg-default);
+  border: var(--stroke-border) solid var(--border-default);
+  border-radius: var(--radius-200);
+  overflow: hidden;
+}
+
+.ds-table th,
+.ds-table td {
+  padding: var(--space-300) var(--space-600);
+  border-bottom: var(--stroke-border) solid var(--border-default);
+  color: var(--text-default);
+  font-weight: var(--weight-regular);
+}
+
+.ds-table thead th {
+  font-weight: var(--weight-semibold);
+  text-align: left;
+}
+
+.ds-table tr:last-child td {
+  border-bottom: none;
+}
+
+.ds-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.ds-table tbody tr:hover {
+  background-color: var(--bg-default-hover);
+}
+
+.ds-table .cell-subtitle {
+  display: block;
+  color: var(--text-secondary);
+  font-weight: var(--weight-regular);
+}
+
+.ds-table .align-right {
+  text-align: right;
+}
+
+/* ========================================
    Color Tokens
    ======================================== */
 

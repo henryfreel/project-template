@@ -1285,6 +1285,98 @@
   </section>
 
   <div class="section-divider">
+    <h2>Table <code>{.ds-table}</code></h2>
+    <p>Data table with header, body rows, optional subtitles, and right-aligned columns</p>
+  </div>
+  <section class="ds-page-section gap-sm list-row-section" style="max-width: 800px;">
+
+    <p class="variant-label">.ds-table — default left-aligned, no subtitles</p>
+    <table class="ds-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Role</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Alice Martin</td>
+          <td>Designer</td>
+          <td>Active</td>
+        </tr>
+        <tr>
+          <td>Bob Chen</td>
+          <td>Engineer</td>
+          <td>Away</td>
+        </tr>
+        <tr>
+          <td>Carol Reyes</td>
+          <td>Product Manager</td>
+          <td>Active</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="variant-label" style="margin-top: var(--space-600);">.ds-table + .cell-subtitle — with subtitle text</p>
+    <table class="ds-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Category</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Wireless Headphones<span class="cell-subtitle">Model WH-1000</span></td>
+          <td>Electronics<span class="cell-subtitle">Audio</span></td>
+          <td>$299.00<span class="cell-subtitle">In stock</span></td>
+        </tr>
+        <tr>
+          <td>Running Shoes<span class="cell-subtitle">Size 10</span></td>
+          <td>Footwear<span class="cell-subtitle">Athletic</span></td>
+          <td>$129.00<span class="cell-subtitle">Low stock</span></td>
+        </tr>
+        <tr>
+          <td>Desk Lamp<span class="cell-subtitle">LED, adjustable</span></td>
+          <td>Home Office<span class="cell-subtitle">Lighting</span></td>
+          <td>$59.00<span class="cell-subtitle">In stock</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="variant-label" style="margin-top: var(--space-600);">.ds-table + .align-right — right-aligned numeric column</p>
+    <table class="ds-table">
+      <thead>
+        <tr>
+          <th>Transaction</th>
+          <th>Date</th>
+          <th class="align-right">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Coffee Shop<span class="cell-subtitle">Visa •4242</span></td>
+          <td>Apr 14, 2026<span class="cell-subtitle">9:32 AM</span></td>
+          <td class="align-right">-$4.50<span class="cell-subtitle">Pending</span></td>
+        </tr>
+        <tr>
+          <td>Salary Deposit<span class="cell-subtitle">Direct deposit</span></td>
+          <td>Apr 12, 2026<span class="cell-subtitle">12:00 AM</span></td>
+          <td class="align-right">+$3,200.00<span class="cell-subtitle">Completed</span></td>
+        </tr>
+        <tr>
+          <td>Electric Bill<span class="cell-subtitle">Auto-pay</span></td>
+          <td>Apr 10, 2026<span class="cell-subtitle">6:00 AM</span></td>
+          <td class="align-right">-$87.30<span class="cell-subtitle">Completed</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </section>
+
+  <div class="section-divider">
     <h2>Pagination <code>{.pagination}</code></h2>
     <p>Page navigation controls</p>
   </div>
