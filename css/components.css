@@ -1684,20 +1684,29 @@ body.overlay-open {
    List Row
    ======================================== */
 
+.list-row-container {
+  padding: var(--space-600);
+  max-width: 800px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .list-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: var(--space-400) 0;
   background-color: var(--bg-default);
+  border-bottom: var(--stroke-border) solid var(--border-default);
   font-family: var(--font-sans);
   cursor: pointer;
-  transition: background-color 0.15s ease, border-radius 0.15s ease, box-shadow 0.15s ease;
+  transition: background-color 0.15s ease, border-radius 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
 .list-row:hover {
   background-color: var(--bg-default-hover);
   border-radius: 6px;
+  border-bottom-color: transparent;
   box-shadow:
     8px 0 0 0 var(--bg-default-hover),
     -8px 0 0 0 var(--bg-default-hover);
@@ -1790,8 +1799,8 @@ body.overlay-open {
   color: var(--icon-tertiary);
 }
 
-.list-row + .list-row {
-  border-top: var(--stroke-border) solid var(--border-default);
+.list-row:last-child {
+  border-bottom: none;
 }
 
 /* ========================================
