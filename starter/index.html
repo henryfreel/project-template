@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My New Project</title>
+
+  <!-- Simple Design System — hosted on Netlify -->
+  <!-- Replace YOUR_SITE with your Netlify subdomain, e.g. simple-design-system -->
+  <link rel="stylesheet" href="https://YOUR_SITE.netlify.app/css/reset.css">
+  <link rel="stylesheet" href="https://YOUR_SITE.netlify.app/css/tokens.css">
+  <link rel="stylesheet" href="https://YOUR_SITE.netlify.app/css/components.css">
+</head>
+<body>
+
+  <!-- Theme toggle -->
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+    <span class="toggle-icon">
+      <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </span>
+    <span class="toggle-label">Light</span>
+  </button>
+
+  <!-- Example: Header -->
+  <header class="ds-header">
+    <div class="logo-mark" style="font-weight: 700; font-size: 18px; color: var(--text-default);">
+      My Project
+    </div>
+    <nav class="nav-pill-list">
+      <a class="nav-pill active" href="#">Home</a>
+      <a class="nav-pill" href="#">About</a>
+      <a class="nav-pill" href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Example: Buttons -->
+  <section style="padding: var(--space-800); display: flex; flex-direction: column; gap: var(--space-600); max-width: 600px;">
+    <h1 style="font-size: var(--text-heading-2); font-weight: var(--weight-bold); color: var(--text-default);">
+      Starter Template
+    </h1>
+    <p style="font-size: var(--text-body); color: var(--text-secondary); line-height: 1.5;">
+      This page consumes the Simple Design System entirely via CDN.
+      No local CSS files needed — just the three link tags in the head.
+    </p>
+    <div style="display: flex; gap: var(--space-300); flex-wrap: wrap;">
+      <button class="btn btn-brand">Primary Action</button>
+      <button class="btn btn-neutral">Secondary</button>
+      <button class="btn btn-subtle">Subtle</button>
+    </div>
+  </section>
+
+  <!-- Example: Table -->
+  <section style="padding: 0 var(--space-800) var(--space-800); max-width: 600px;">
+    <table class="ds-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Role</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Alice Martin</td>
+          <td>Designer</td>
+          <td>Active</td>
+        </tr>
+        <tr>
+          <td>Bob Chen</td>
+          <td>Engineer</td>
+          <td>Away</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Example: Tags -->
+  <section style="padding: 0 var(--space-800) var(--space-800); display: flex; gap: var(--space-300); flex-wrap: wrap;">
+    <span class="tag">Default Tag <button class="tag-dismiss" aria-label="Dismiss">&times;</button></span>
+    <span class="tag secondary">Secondary Tag</span>
+  </section>
+
+  <!-- Icons: reference individual SVGs or the sprite from the CDN -->
+  <!-- Individual SVG: <img src="https://YOUR_SITE.netlify.app/icons/heart.svg" alt="heart"> -->
+  <!-- SVG Sprite:
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <use href="https://YOUR_SITE.netlify.app/icons-sprite.svg#heart"></use>
+    </svg>
+  -->
+
+  <!-- Interactive components (theme toggle, dialogs, modals, etc.) -->
+  <script src="https://YOUR_SITE.netlify.app/js/main.js"></script>
+
+</body>
+</html>
