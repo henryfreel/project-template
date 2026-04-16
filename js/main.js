@@ -200,10 +200,66 @@ document.addEventListener('DOMContentLoaded', () => {
         const id = link.getAttribute('href')?.replace('#', '');
         const target = document.getElementById(id);
         if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          target.scrollIntoView({ behavior: 'instant', block: 'start' });
           history.replaceState(null, '', '#' + id);
         }
       });
     });
   }
+
+  // Custom select fields (popover-based)
+  document.querySelectorAll('.select-field').forEach(field => {
+    const trigger = field.querySelector('.select-trigger');
+    const popover = field.querySelector('.select-popover');
+    if (!trigger || !popover) return;
+
+    trigger.addEventListener('click', () => {
+      if (field.classList.contains('disabled')) return;
+      const wasOpen = field.classList.contains('open');
+      closeAllSelects();
+      if (!wasOpen) field.classList.add('open');
+    });
+
+    popover.querySelectorAll('.popover-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const value = item.dataset.value;
+        const text = field.querySelector('.select-trigger-text');
+        text.textContent = value;
+        text.classList.remove('placeholder');
+        field.dataset.value = value;
+
+        popover.querySelectorAll('.popover-item').forEach(i => {
+          i.classList.remove('selected');
+          const check = i.querySelector('.popover-check');
+          if (check) check.remove();
+        });
+        item.classList.add('selected');
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.classList.add('popover-check');
+        svg.setAttribute('viewBox', '0 0 24 24');
+        svg.setAttribute('fill', 'none');
+        svg.setAttribute('stroke', 'currentColor');
+        svg.setAttribute('stroke-width', '2');
+        svg.setAttribute('stroke-linecap', 'round');
+        svg.setAttribute('stroke-linejoin', 'round');
+        const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+        use.setAttributeNS('http://www.w3.org/1999/xlink', 'href', 'icons.svg#check');
+        svg.appendChild(use);
+        item.appendChild(svg);
+
+        field.classList.remove('open');
+        field.classList.remove('error');
+        const errorMsg = field.querySelector('.select-field-error');
+        if (errorMsg) errorMsg.style.display = 'none';
+      });
+    });
+  });
+
+  function closeAllSelects() {
+    document.querySelectorAll('.select-field.open').forEach(f => f.classList.remove('open'));
+  }
+
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.select-field')) closeAllSelects();
+  });
 });

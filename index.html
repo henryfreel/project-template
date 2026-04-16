@@ -31,6 +31,7 @@
         <div class="sidebar-nav-group">
           <span class="sidebar-nav-heading">Getting Started</span>
           <a class="menu-item" href="#getting-started">Getting Started</a>
+          <a class="menu-item" href="#header">Header</a>
         </div>
 
         <div class="sidebar-nav-group">
@@ -47,12 +48,10 @@
 
         <div class="sidebar-nav-group">
           <span class="sidebar-nav-heading">Layout</span>
-          <a class="menu-item" href="#header">Header</a>
           <a class="menu-item" href="#hero-sections">Hero Sections</a>
           <a class="menu-item" href="#panel-sections">Panel Sections</a>
           <a class="menu-item" href="#card-grid-sections">Card Grid Sections</a>
           <a class="menu-item" href="#page-sections">Page Sections</a>
-          <a class="menu-item" href="#footer">Footer</a>
         </div>
 
         <div class="sidebar-nav-group">
@@ -76,6 +75,7 @@
           <a class="menu-item" href="#switch-field">Switch</a>
           <a class="menu-item" href="#search-input">Search</a>
           <a class="menu-item" href="#menu">Menu</a>
+          <a class="menu-item" href="#popover">Popover</a>
           <a class="menu-item" href="#pagination">Pagination</a>
         </div>
 
@@ -91,6 +91,7 @@
           <a class="menu-item" href="#page-product">Page Product</a>
           <a class="menu-item" href="#page-product-results">Product Results</a>
           <a class="menu-item" href="#ai-chatbot">AI Chatbot</a>
+          <a class="menu-item" href="#footer">Footer</a>
         </div>
 
       </div>
@@ -99,11 +100,46 @@
     <main class="page-content">
 
   <!-- ============================================================
+       GETTING STARTED
+       ============================================================ -->
+
+  <div class="section-divider" id="getting-started">
+    <h2>Getting Started <code class="ref-other">{CDN usage}</code></h2>
+    <p>Use this design system in any project by adding these tags to your HTML</p>
+  </div>
+  <section class="ds-page-section gap-sm" style="max-width: 800px; align-items: flex-start;">
+    <pre style="width: 100%; background: var(--bg-secondary); border: var(--stroke-border) solid var(--border-default); border-radius: var(--radius-200); padding: var(--space-600); overflow-x: auto; font-family: var(--font-mono); font-size: var(--text-body-small); line-height: 1.6; color: var(--text-default);"><code>&lt;!-- CSS — add to &lt;head&gt; --&gt;
+&lt;link rel="stylesheet" href="https://public-project-starter-web.netlify.app/css/reset.css"&gt;
+&lt;link rel="stylesheet" href="https://public-project-starter-web.netlify.app/css/tokens.css"&gt;
+&lt;link rel="stylesheet" href="https://public-project-starter-web.netlify.app/css/components.css"&gt;
+
+&lt;!-- JS — add before &lt;/body&gt; --&gt;
+&lt;script src="https://public-project-starter-web.netlify.app/js/main.js"&gt;&lt;/script&gt;
+
+&lt;!-- Icons — individual SVG (fixed at 24px) --&gt;
+&lt;img src="https://public-project-starter-web.netlify.app/icons/heart.svg" alt="heart"&gt;
+
+&lt;!-- Icons — SVG sprite (any size via width/height) --&gt;
+&lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+     stroke="currentColor" stroke-width="2"&gt;
+  &lt;use href="https://public-project-starter-web.netlify.app/icons.svg#heart"&gt;&lt;/use&gt;
+&lt;/svg&gt;
+
+&lt;!-- Change width/height to render at any size (16, 20, 24, 32, 40, 48) --&gt;
+&lt;svg width="16" height="16" viewBox="0 0 24 24" ...&gt;...&lt;/svg&gt;
+&lt;svg width="32" height="32" viewBox="0 0 24 24" ...&gt;...&lt;/svg&gt;
+&lt;svg width="48" height="48" viewBox="0 0 24 24" ...&gt;...&lt;/svg&gt;</code></pre>
+    <p style="font-size: var(--text-body-small); color: var(--text-secondary); line-height: 1.5;">
+      A full starter template is available at <code style="font-family: var(--font-mono); background: var(--bg-secondary); padding: 2px 6px; border-radius: 4px;">/starter/index.html</code>.
+    </p>
+  </section>
+
+  <!-- ============================================================
        HEADER
        ============================================================ -->
 
   <div class="section-divider" id="header">
-    <h2>Header <code>{.ds-header}</code></h2>
+    <h2>Header <code class="ref-class">{.ds-header}</code></h2>
     <p>Site navigation with logo, nav pills, and auth actions</p>
   </div>
 
@@ -129,42 +165,11 @@
   </header>
 
   <!-- ============================================================
-       GETTING STARTED
-       ============================================================ -->
-
-  <div class="section-divider" id="getting-started">
-    <h2>Getting Started <code>{CDN usage}</code></h2>
-    <p>Use this design system in any project by adding these tags to your HTML</p>
-  </div>
-  <section class="ds-page-section gap-sm" style="max-width: 800px; align-items: flex-start;">
-    <pre style="width: 100%; background: var(--bg-secondary); border: var(--stroke-border) solid var(--border-default); border-radius: var(--radius-200); padding: var(--space-600); overflow-x: auto; font-family: var(--font-mono); font-size: var(--text-body-small); line-height: 1.6; color: var(--text-default);"><code>&lt;!-- CSS — add to &lt;head&gt; --&gt;
-&lt;link rel="stylesheet" href="https://YOUR_SITE.netlify.app/css/reset.css"&gt;
-&lt;link rel="stylesheet" href="https://YOUR_SITE.netlify.app/css/tokens.css"&gt;
-&lt;link rel="stylesheet" href="https://YOUR_SITE.netlify.app/css/components.css"&gt;
-
-&lt;!-- JS — add before &lt;/body&gt; --&gt;
-&lt;script src="https://YOUR_SITE.netlify.app/js/main.js"&gt;&lt;/script&gt;
-
-&lt;!-- Icons — individual SVG --&gt;
-&lt;img src="https://YOUR_SITE.netlify.app/icons/heart.svg" alt="heart"&gt;
-
-&lt;!-- Icons — SVG sprite --&gt;
-&lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-     stroke="currentColor" stroke-width="2"&gt;
-  &lt;use href="https://YOUR_SITE.netlify.app/icons-sprite.svg#heart"&gt;&lt;/use&gt;
-&lt;/svg&gt;</code></pre>
-    <p style="font-size: var(--text-body-small); color: var(--text-secondary); line-height: 1.5;">
-      Replace <code style="font-family: var(--font-mono); background: var(--bg-secondary); padding: 2px 6px; border-radius: 4px;">YOUR_SITE</code> with your Netlify subdomain.
-      A full starter template is available at <code style="font-family: var(--font-mono); background: var(--bg-secondary); padding: 2px 6px; border-radius: 4px;">/starter/index.html</code>.
-    </p>
-  </section>
-
-  <!-- ============================================================
        COLOR TOKENS
        ============================================================ -->
 
   <div class="section-divider" id="color-tokens">
-    <h2>Color Tokens <code>{tokens.css}</code></h2>
+    <h2>Color Tokens <code class="ref-other">{tokens.css}</code></h2>
     <p>Design system color variables — adapts to light and dark mode</p>
   </div>
   <section class="ds-page-section gap-sm">
@@ -349,7 +354,7 @@
        ============================================================ -->
 
   <div class="section-divider" id="typography">
-    <h2>Typography <code>{tokens.css}</code></h2>
+    <h2>Typography <code class="ref-other">{tokens.css}</code></h2>
     <p>Font styles from the design system</p>
   </div>
   <section class="ds-page-section gap-sm">
@@ -417,7 +422,7 @@
        ============================================================ -->
 
   <div class="section-divider" id="spacing">
-    <h2>Spacing <code>{tokens.css}</code></h2>
+    <h2>Spacing <code class="ref-other">{tokens.css}</code></h2>
     <p>Consistent spacing scale used across all components</p>
   </div>
   <section class="ds-page-section gap-sm">
@@ -490,7 +495,7 @@
        ============================================================ -->
 
   <div class="section-divider" id="border-radius">
-    <h2>Border Radius <code>{tokens.css}</code></h2>
+    <h2>Border Radius <code class="ref-other">{tokens.css}</code></h2>
     <p>Corner rounding values for components</p>
   </div>
   <section class="ds-page-section gap-sm">
@@ -525,7 +530,7 @@
        ============================================================ -->
 
   <div class="section-divider" id="stroke">
-    <h2>Stroke <code>{tokens.css}</code></h2>
+    <h2>Stroke <code class="ref-other">{tokens.css}</code></h2>
     <p>Border and outline widths</p>
   </div>
   <section class="ds-page-section gap-sm">
@@ -548,7 +553,7 @@
        ============================================================ -->
 
   <div class="section-divider" id="drop-shadows">
-    <h2>Drop Shadows <code>{tokens.css}</code></h2>
+    <h2>Drop Shadows <code class="ref-other">{tokens.css}</code></h2>
     <p>Elevation levels for layered surfaces</p>
   </div>
   <section class="ds-page-section gap-sm" style="background-color: var(--bg-secondary);">
@@ -587,7 +592,7 @@
        ============================================================ -->
 
   <div class="section-divider" id="inner-shadows">
-    <h2>Inner Shadows <code>{tokens.css}</code></h2>
+    <h2>Inner Shadows <code class="ref-other">{tokens.css}</code></h2>
     <p>Inset depth effects for recessed surfaces</p>
   </div>
   <section class="ds-page-section gap-sm" style="background-color: var(--bg-secondary);">
@@ -626,7 +631,7 @@
        ============================================================ -->
 
   <div class="section-divider" id="blur-effects">
-    <h2>Blur Effects <code>{tokens.css}</code></h2>
+    <h2>Blur Effects <code class="ref-other">{tokens.css}</code></h2>
     <p>Background and layer blur for overlays and glass surfaces</p>
   </div>
   <section class="ds-page-section gap-sm">
@@ -667,7 +672,7 @@
        ============================================================ -->
 
   <div class="section-divider" id="hero-sections">
-    <h2>Hero Sections <code>{.ds-hero}</code></h2>
+    <h2>Hero Sections <code class="ref-class">{.ds-hero}</code></h2>
     <p>Full-width hero banners with various content layouts</p>
   </div>
 
@@ -706,11 +711,11 @@
        ============================================================ -->
 
   <div class="section-divider" id="panel-sections">
-    <h2>Panel Sections <code>{.ds-panel}</code></h2>
+    <h2>Panel Sections <code class="ref-class">{.ds-panel}</code></h2>
     <p>Content panels with image and text combinations</p>
   </div>
 
-  <p class="variant-label">.ds-panel — image left, content right</p>
+  <p class="variant-label"><span class="ref-class">.ds-panel</span> — image left, content right</p>
   <section class="ds-panel">
     <div class="panel-image image-placeholder"></div>
     <div class="panel-content">
@@ -723,7 +728,7 @@
     </div>
   </section>
 
-  <p class="variant-label">.ds-panel — content left, image right (reversed order)</p>
+  <p class="variant-label"><span class="ref-class">.ds-panel</span> — content left, image right (reversed order)</p>
   <section class="ds-panel">
     <div class="panel-content">
       <div class="text-content-heading">
@@ -736,7 +741,7 @@
     <div class="panel-image image-placeholder"></div>
   </section>
 
-  <p class="variant-label">.ds-panel-double — two images side by side</p>
+  <p class="variant-label"><span class="ref-class">.ds-panel-double</span> — two images side by side</p>
   <section class="ds-panel-double">
     <div class="panel-image image-placeholder"></div>
     <div class="panel-image image-placeholder"></div>
@@ -747,11 +752,11 @@
        ============================================================ -->
 
   <div class="section-divider" id="card-grid-sections">
-    <h2>Card Grid Sections <code>{.ds-card-grid}</code></h2>
+    <h2>Card Grid Sections <code class="ref-class">{.ds-card-grid}</code></h2>
     <p>Grid layouts for pricing, features, content, and more</p>
   </div>
 
-  <p class="variant-label">.ds-card-grid + .pricing-card — pricing tier layout</p>
+  <p class="variant-label"><span class="ref-class">.ds-card-grid</span> + <span class="ref-class">.pricing-card</span> — pricing tier layout</p>
   <section class="ds-card-grid align-center">
     <div class="nav-pill-list">
       <a class="nav-pill active" href="#">Monthly</a>
@@ -815,7 +820,7 @@
     </div>
   </section>
 
-  <p class="variant-label">.ds-card-grid + .card-icon — icon feature cards</p>
+  <p class="variant-label"><span class="ref-class">.ds-card-grid</span> + <span class="ref-class">.card-icon</span> — icon feature cards</p>
   <section class="ds-card-grid">
     <div class="text-content-heading">
       <h2 class="heading">Heading</h2>
@@ -864,25 +869,13 @@
     </div>
   </section>
 
-  <p class="variant-label">.ds-card-grid + .card-content-list — image content list cards</p>
+  <p class="variant-label"><span class="ref-class">.ds-card-grid</span> + <span class="ref-class">.card-content-list</span> — image content list cards</p>
   <section class="ds-card-grid">
     <div class="text-content-heading">
       <h2 class="heading">Heading</h2>
       <p class="subheading">Subheading</p>
     </div>
     <div class="cards-list">
-      <div class="card-content-list">
-        <div class="card-image image-placeholder"></div>
-        <div class="card-body">
-          <div class="card-text">
-            <h3 class="card-title">Title</h3>
-            <p class="card-description">Body text for whatever you'd like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story.</p>
-          </div>
-          <div class="btn-group">
-            <button class="btn btn-neutral">Button</button>
-          </div>
-        </div>
-      </div>
       <div class="card-content-list">
         <div class="card-image image-placeholder"></div>
         <div class="card-body">
@@ -915,11 +908,11 @@
        ============================================================ -->
 
   <div class="section-divider" id="page-sections">
-    <h2>Page Sections <code>{.ds-page-section}</code></h2>
+    <h2>Page Sections <code class="ref-class">{.ds-page-section}</code></h2>
     <p>Standalone page content blocks</p>
   </div>
 
-  <p class="variant-label">.ds-page-section + .ds-accordion — accordion FAQ layout</p>
+  <p class="variant-label"><span class="ref-class">.ds-page-section</span> + <span class="ref-class">.ds-accordion</span> — accordion FAQ layout</p>
   <section class="ds-page-section">
     <div class="text-content-heading align-center">
       <h2 class="heading">Heading</h2>
@@ -962,7 +955,7 @@
     </div>
   </section>
 
-  <p class="variant-label">.ds-page-section + .form-newsletter — newsletter signup layout</p>
+  <p class="variant-label"><span class="ref-class">.ds-page-section</span> + <span class="ref-class">.form-newsletter</span> — newsletter signup layout</p>
   <section class="ds-page-section gap-sm">
     <div class="text-content-heading align-center">
       <h2 class="heading">Follow the latest trends</h2>
@@ -977,48 +970,68 @@
   </section>
 
   <div class="section-divider" id="buttons">
-    <h2>Buttons <code>{.btn}</code></h2>
+    <h2>Buttons <code class="ref-class">{.btn}</code></h2>
     <p>Action buttons in various styles and sizes</p>
   </div>
   <section class="ds-page-section gap-sm">
-    <p class="variant-label">.btn.btn-brand, .btn-neutral, .btn-subtle, .btn-danger</p>
+    <p class="variant-label"><span class="ref-class">.btn.btn-brand</span>, <span class="ref-class">.btn-neutral</span>, <span class="ref-class">.btn-subtle</span>, <span class="ref-class">.btn-danger</span></p>
     <div style="display: flex; gap: var(--space-400); flex-wrap: wrap; align-items: center;">
       <button class="btn btn-brand">Primary</button>
       <button class="btn btn-neutral">Neutral</button>
       <button class="btn btn-subtle">Subtle</button>
       <button class="btn btn-danger">Danger</button>
     </div>
-    <p class="variant-label">.btn.btn-sm — small size</p>
+    <p class="variant-label"><span class="ref-class">.btn.btn-sm</span> — small size</p>
     <div style="display: flex; gap: var(--space-400); flex-wrap: wrap; align-items: center;">
       <button class="btn btn-brand btn-sm">Small Primary</button>
       <button class="btn btn-neutral btn-sm">Small Neutral</button>
       <button class="btn btn-subtle btn-sm">Small Subtle</button>
     </div>
-    <p class="variant-label">.btn.disabled — disabled state</p>
+    <p class="variant-label"><span class="ref-class">.btn.disabled</span> — disabled state</p>
     <div style="display: flex; gap: var(--space-400); flex-wrap: wrap; align-items: center;">
       <button class="btn btn-brand disabled" disabled>Disabled Primary</button>
       <button class="btn btn-neutral disabled" disabled>Disabled Neutral</button>
     </div>
   </section>
 
+  <div class="section-divider" id="icon-button">
+    <h2>Icon Button <code class="ref-class">{.btn-icon}</code></h2>
+    <p>Icon-only buttons in brand, neutral, and subtle variants with two sizes</p>
+  </div>
+  <section class="ds-page-section gap-sm" style="align-items: flex-start;">
+    <p class="variant-label"><span class="ref-class">.btn-icon.btn-brand</span>, <span class="ref-class">.btn-icon.btn-neutral</span>, <span class="ref-class">.btn-icon.btn-subtle</span> — medium</p>
+    <div style="display: flex; gap: var(--space-300); flex-wrap: wrap; align-items: center;">
+      <button class="btn-icon btn-brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+      <button class="btn-icon btn-neutral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+      <button class="btn-icon btn-subtle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>
+    </div>
+
+    <p class="variant-label" style="margin-top: var(--space-400);"><span class="ref-class">.btn-icon.btn-sm</span> — small size</p>
+    <div style="display: flex; gap: var(--space-300); flex-wrap: wrap; align-items: center;">
+      <button class="btn-icon btn-brand btn-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+      <button class="btn-icon btn-neutral btn-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+      <button class="btn-icon btn-subtle btn-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>
+    </div>
+  </section>
+
   <div class="section-divider" id="avatars">
-    <h2>Avatars <code>{.avatar}</code></h2>
+    <h2>Avatars <code class="ref-class">{.avatar}</code></h2>
     <p>User profile images and initials in various sizes and shapes</p>
   </div>
   <section class="ds-page-section gap-sm">
-    <p class="variant-label">.avatar — circle (default, .avatar-md, .avatar-sm)</p>
+    <p class="variant-label"><span class="ref-class">.avatar</span> — circle (default, <span class="ref-class">.avatar-md</span>, <span class="ref-class">.avatar-sm</span>)</p>
     <div style="display: flex; gap: var(--space-400); align-items: center;">
       <div class="avatar avatar-initial"><span>A</span></div>
       <div class="avatar avatar-initial avatar-md"><span>B</span></div>
       <div class="avatar avatar-initial avatar-sm"><span>C</span></div>
     </div>
-    <p class="variant-label">.avatar.avatar-square — square (default, .avatar-md, .avatar-sm)</p>
+    <p class="variant-label"><span class="ref-class">.avatar.avatar-square</span> — square (default, <span class="ref-class">.avatar-md</span>, <span class="ref-class">.avatar-sm</span>)</p>
     <div style="display: flex; gap: var(--space-400); align-items: center;">
       <div class="avatar avatar-initial avatar-square"><span>A</span></div>
       <div class="avatar avatar-initial avatar-square avatar-md"><span>B</span></div>
       <div class="avatar avatar-initial avatar-square avatar-sm"><span>C</span></div>
     </div>
-    <p class="variant-label">.avatar-group — overlapping stack</p>
+    <p class="variant-label"><span class="ref-class">.avatar-group</span> — overlapping stack</p>
     <div class="avatar-group">
       <div class="avatar avatar-initial"><span>A</span></div>
       <div class="avatar avatar-initial"><span>B</span></div>
@@ -1028,11 +1041,11 @@
   </section>
 
   <div class="section-divider" id="tags">
-    <h2>Tags <code>{.tag}</code></h2>
+    <h2>Tags <code class="ref-class">{.tag}</code></h2>
     <p>Labels and badges for categorization and status</p>
   </div>
   <section class="ds-page-section gap-sm">
-    <p class="variant-label">.tag — primary with dismiss button</p>
+    <p class="variant-label"><span class="ref-class">.tag</span> — primary with dismiss button</p>
     <div style="display: flex; gap: var(--space-300); flex-wrap: wrap; align-items: center;">
       <span class="tag tag-brand">Brand<button class="tag-dismiss" aria-label="Remove">&times;</button></span>
       <span class="tag tag-danger">Danger<button class="tag-dismiss" aria-label="Remove">&times;</button></span>
@@ -1040,7 +1053,7 @@
       <span class="tag tag-warning">Warning<button class="tag-dismiss" aria-label="Remove">&times;</button></span>
       <span class="tag tag-neutral">Neutral<button class="tag-dismiss" aria-label="Remove">&times;</button></span>
     </div>
-    <p class="variant-label">.tag.secondary — secondary without dismiss</p>
+    <p class="variant-label"><span class="ref-class">.tag.secondary</span> — secondary without dismiss</p>
     <div style="display: flex; gap: var(--space-300); flex-wrap: wrap; align-items: center;">
       <span class="tag tag-brand secondary">Brand</span>
       <span class="tag tag-danger secondary">Danger</span>
@@ -1050,8 +1063,29 @@
     </div>
   </section>
 
+  <div class="section-divider" id="tag-toggle">
+    <h2>Tag Toggle <code class="ref-class">{.tag-toggle}</code></h2>
+    <p>Toggleable tags for filtering — on state uses brand fill, off state uses tertiary</p>
+  </div>
+  <section class="ds-page-section gap-sm" style="align-items: flex-start;">
+    <p class="variant-label"><span class="ref-class">.tag-toggle-group</span> — mix of <span class="ref-class">.tag-toggle.on</span> and <span class="ref-class">.tag-toggle.off</span></p>
+    <div class="tag-toggle-group">
+      <button class="tag-toggle on">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Design
+      </button>
+      <button class="tag-toggle off">Engineering</button>
+      <button class="tag-toggle off">Product</button>
+      <button class="tag-toggle on">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Marketing
+      </button>
+      <button class="tag-toggle off">Sales</button>
+    </div>
+  </section>
+
   <div class="section-divider" id="tabs">
-    <h2>Tabs <code>{.ds-tabs}</code></h2>
+    <h2>Tabs <code class="ref-class">{.ds-tabs}</code></h2>
     <p>Tabbed navigation for switching between content panels</p>
   </div>
   <section class="ds-page-section gap-sm">
@@ -1072,34 +1106,34 @@
   </section>
 
   <div class="section-divider" id="tooltips">
-    <h2>Tooltips <code>{.tooltip}</code></h2>
+    <h2>Tooltips <code class="ref-class">{.tooltip}</code></h2>
     <p>Contextual information on hover</p>
   </div>
   <section class="ds-page-section gap-sm">
     <div style="display: flex; gap: var(--space-1200); flex-wrap: wrap; align-items: center; justify-content: center; padding: var(--space-1200) 0;">
       <div style="text-align: center;">
-        <p class="variant-label" style="padding: 0 0 var(--space-200);">.tooltip.top</p>
+        <p class="variant-label" style="padding: 0 0 var(--space-200);"><span class="ref-class">.tooltip.top</span></p>
         <div class="tooltip-wrapper">
           <button class="btn btn-neutral">Hover Top</button>
           <div class="tooltip top"><span class="tooltip-title">Title</span><span class="tooltip-body">Body text</span></div>
         </div>
       </div>
       <div style="text-align: center;">
-        <p class="variant-label" style="padding: 0 0 var(--space-200);">.tooltip.bottom</p>
+        <p class="variant-label" style="padding: 0 0 var(--space-200);"><span class="ref-class">.tooltip.bottom</span></p>
         <div class="tooltip-wrapper">
           <button class="btn btn-neutral">Hover Bottom</button>
           <div class="tooltip bottom"><span class="tooltip-title">Title</span><span class="tooltip-body">Body text</span></div>
         </div>
       </div>
       <div style="text-align: center;">
-        <p class="variant-label" style="padding: 0 0 var(--space-200);">.tooltip.left</p>
+        <p class="variant-label" style="padding: 0 0 var(--space-200);"><span class="ref-class">.tooltip.left</span></p>
         <div class="tooltip-wrapper">
           <button class="btn btn-neutral">Hover Left</button>
           <div class="tooltip left"><span class="tooltip-title">Title</span><span class="tooltip-body">Body text</span></div>
         </div>
       </div>
       <div style="text-align: center;">
-        <p class="variant-label" style="padding: 0 0 var(--space-200);">.tooltip.right</p>
+        <p class="variant-label" style="padding: 0 0 var(--space-200);"><span class="ref-class">.tooltip.right</span></p>
         <div class="tooltip-wrapper">
           <button class="btn btn-neutral">Hover Right</button>
           <div class="tooltip right"><span class="tooltip-title">Title</span><span class="tooltip-body">Body text</span></div>
@@ -1109,13 +1143,13 @@
   </section>
 
   <div class="section-divider" id="notifications">
-    <h2>Notifications <code>{.notification}</code></h2>
+    <h2>Notifications <code class="ref-class">{.notification}</code></h2>
     <p>Feedback messages and alerts</p>
   </div>
   <section class="ds-page-section gap-sm">
     <div style="display: flex; gap: var(--space-600); flex-wrap: wrap; justify-content: center;">
       <div>
-        <p class="variant-label" style="padding-left: 0;">.notification — default</p>
+        <p class="variant-label" style="padding-left: 0;"><span class="ref-class">.notification</span> — default</p>
         <div class="notification">
           <svg class="notification-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="8" r="1" fill="currentColor"/><line x1="10" y1="10.5" x2="10" y2="14" stroke="currentColor" stroke-width="1.5"/></svg>
           <div class="notification-stack">
@@ -1126,7 +1160,7 @@
         </div>
       </div>
       <div>
-        <p class="variant-label" style="padding-left: 0;">.notification.alert — destructive/error</p>
+        <p class="variant-label" style="padding-left: 0;"><span class="ref-class">.notification.alert</span> — destructive/error</p>
         <div class="notification alert">
           <svg class="notification-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="8" r="1" fill="currentColor"/><line x1="10" y1="10.5" x2="10" y2="14" stroke="currentColor" stroke-width="1.5"/></svg>
           <div class="notification-stack">
@@ -1140,7 +1174,7 @@
   </section>
 
   <div class="section-divider" id="dialog">
-    <h2>Dialog <code>{.dialog-overlay}</code></h2>
+    <h2>Dialog <code class="ref-class">{.dialog-overlay}</code></h2>
     <p>Modal overlay for focused content and actions</p>
   </div>
   <section class="ds-page-section gap-sm">
@@ -1161,7 +1195,7 @@
   </div>
 
   <div class="section-divider" id="modal">
-    <h2>Modal <code>{.modal-overlay}</code></h2>
+    <h2>Modal <code class="ref-class">{.modal-overlay}</code></h2>
     <p>Top-aligned overlay with fixed header, scrollable body, and optional footer</p>
   </div>
   <section class="ds-page-section gap-sm">
@@ -1190,7 +1224,7 @@
   </div>
 
   <div class="section-divider" id="blade">
-    <h2>Blade <code>{.blade-overlay}</code></h2>
+    <h2>Blade <code class="ref-class">{.blade-overlay}</code></h2>
     <p>Side panel fixed to the right edge with transparent scrim overlay</p>
   </div>
   <section class="ds-page-section gap-sm">
@@ -1215,12 +1249,12 @@
   </div>
 
   <div class="section-divider" id="list-row">
-    <h2>List Row <code>{.list-row}</code></h2>
+    <h2>List Row <code class="ref-class">{.list-row}</code></h2>
     <p>Flexible row component for lists, with optional icon, subtitle, right content, and chevron</p>
   </div>
   <section class="ds-page-section gap-sm list-row-section" style="max-width: 800px;">
 
-    <p class="variant-label">.list-row-icon — Avatar variant (icon in 40px rounded box)</p>
+    <p class="variant-label"><span class="ref-class">.list-row-icon</span> — Avatar variant (icon in 40px rounded box)</p>
     <div class="list-row-container">
       <div class="list-row">
         <div class="list-row-left">
@@ -1237,7 +1271,6 @@
             <span class="list-row-right-primary">$1,240.00</span>
             <span class="list-row-right-secondary">+$80.00</span>
           </div>
-          <svg class="list-row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#chevron-right"/></svg>
         </div>
       </div>
       <div class="list-row">
@@ -1255,12 +1288,11 @@
             <span class="list-row-right-primary">$0.00</span>
             <span class="list-row-right-secondary">No balance</span>
           </div>
-          <svg class="list-row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#chevron-right"/></svg>
         </div>
       </div>
     </div>
 
-    <p class="variant-label" style="margin-top: var(--space-600);">.list-row-icon.icon-only — Icon variant (raw 24px icon, no box)</p>
+    <p class="variant-label" style="margin-top: var(--space-600);"><span class="ref-class">.list-row-icon.icon-only</span> — Icon variant (raw 24px icon, no box)</p>
     <div class="list-row-container">
       <div class="list-row">
         <div class="list-row-left">
@@ -1286,7 +1318,7 @@
       </div>
     </div>
 
-    <p class="variant-label" style="margin-top: var(--space-600);">.list-row-icon.image — Image variant (40px rounded image)</p>
+    <p class="variant-label" style="margin-top: var(--space-600);"><span class="ref-class">.list-row-icon.image</span> — Image variant (40px rounded image)</p>
     <div class="list-row-container">
       <div class="list-row">
         <div class="list-row-left">
@@ -1297,9 +1329,6 @@
             <span class="list-row-header">Sarah Connor</span>
             <span class="list-row-subtitle">Online</span>
           </div>
-        </div>
-        <div class="list-row-right">
-          <svg class="list-row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#chevron-right"/></svg>
         </div>
       </div>
       <div class="list-row">
@@ -1312,13 +1341,10 @@
             <span class="list-row-subtitle">Away</span>
           </div>
         </div>
-        <div class="list-row-right">
-          <svg class="list-row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#chevron-right"/></svg>
-        </div>
       </div>
     </div>
 
-    <p class="variant-label" style="margin-top: var(--space-600);">.list-row — no icon, header only</p>
+    <p class="variant-label" style="margin-top: var(--space-600);"><span class="ref-class">.list-row</span> — no icon, header only</p>
     <div class="list-row-container">
       <div class="list-row">
         <div class="list-row-left">
@@ -1336,7 +1362,7 @@
       </div>
     </div>
 
-    <p class="variant-label" style="margin-top: var(--space-600);">.list-row — no icon, with right text + chevron</p>
+    <p class="variant-label" style="margin-top: var(--space-600);"><span class="ref-class">.list-row</span> — no icon, with right text</p>
     <div class="list-row-container">
       <div class="list-row">
         <div class="list-row-left">
@@ -1349,7 +1375,6 @@
           <div class="list-row-right-text">
             <span class="list-row-right-primary">$9.99/mo</span>
           </div>
-          <svg class="list-row-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#chevron-right"/></svg>
         </div>
       </div>
     </div>
@@ -1357,68 +1382,12 @@
   </section>
 
   <div class="section-divider" id="table">
-    <h2>Table <code>{.ds-table}</code></h2>
-    <p>Data table with header, body rows, optional subtitles, and right-aligned columns</p>
+    <h2>Table <code class="ref-class">{.ds-table, .ds-table-header, .ds-table-section}</code></h2>
+    <p>Data table with rounded border, header rows, optional subtitles, and composable Table Header + Table Section wrappers</p>
   </div>
   <section class="ds-page-section gap-sm list-row-section" style="max-width: 800px;">
 
-    <p class="variant-label">.ds-table — default left-aligned, no subtitles</p>
-    <table class="ds-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Role</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Alice Martin</td>
-          <td>Designer</td>
-          <td>Active</td>
-        </tr>
-        <tr>
-          <td>Bob Chen</td>
-          <td>Engineer</td>
-          <td>Away</td>
-        </tr>
-        <tr>
-          <td>Carol Reyes</td>
-          <td>Product Manager</td>
-          <td>Active</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p class="variant-label" style="margin-top: var(--space-600);">.ds-table + .cell-subtitle — with subtitle text</p>
-    <table class="ds-table">
-      <thead>
-        <tr>
-          <th>Product</th>
-          <th>Category</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Wireless Headphones<span class="cell-subtitle">Model WH-1000</span></td>
-          <td>Electronics<span class="cell-subtitle">Audio</span></td>
-          <td>$299.00<span class="cell-subtitle">In stock</span></td>
-        </tr>
-        <tr>
-          <td>Running Shoes<span class="cell-subtitle">Size 10</span></td>
-          <td>Footwear<span class="cell-subtitle">Athletic</span></td>
-          <td>$129.00<span class="cell-subtitle">Low stock</span></td>
-        </tr>
-        <tr>
-          <td>Desk Lamp<span class="cell-subtitle">LED, adjustable</span></td>
-          <td>Home Office<span class="cell-subtitle">Lighting</span></td>
-          <td>$59.00<span class="cell-subtitle">In stock</span></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p class="variant-label" style="margin-top: var(--space-600);">.ds-table + .align-right — right-aligned numeric column</p>
+    <p class="variant-label"><span class="ref-class">.ds-table</span> + <span class="ref-class">.align-right</span> — transactions with right-aligned amounts</p>
     <table class="ds-table">
       <thead>
         <tr>
@@ -1446,14 +1415,48 @@
       </tbody>
     </table>
 
+    <p class="variant-label" style="margin-top: var(--space-600);"><span class="ref-class">.ds-table-section</span> > <span class="ref-class">.ds-table-header</span> + <span class="ref-class">.ds-table</span> — full Table Section with header</p>
+    <div class="ds-table-section">
+      <div class="ds-table-header">
+        <div class="ds-table-header-title">Team Members</div>
+        <div class="ds-table-header-summary">All active and away members in your workspace</div>
+      </div>
+      <table class="ds-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th class="align-right">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Alice Martin<span class="cell-subtitle">alice@company.com</span></td>
+            <td>Designer<span class="cell-subtitle">Product team</span></td>
+            <td class="align-right">Active</td>
+          </tr>
+          <tr>
+            <td>Bob Chen<span class="cell-subtitle">bob@company.com</span></td>
+            <td>Engineer<span class="cell-subtitle">Platform team</span></td>
+            <td class="align-right">Away</td>
+          </tr>
+          <tr>
+            <td>Carol Reyes<span class="cell-subtitle">carol@company.com</span></td>
+            <td>Product Manager<span class="cell-subtitle">Growth team</span></td>
+            <td class="align-right">Active</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
   </section>
 
   <div class="section-divider" id="checkbox-field">
-    <h2>Checkbox Field <code>{.checkbox-field}</code></h2>
+    <h2>Checkbox Field <code class="ref-class">{.checkbox-field}</code></h2>
     <p>Checkbox input with label and optional description — supports checked, unchecked, indeterminate, and disabled states</p>
   </div>
   <section class="ds-page-section gap-sm" style="max-width: 600px; align-items: flex-start;">
-    <p class="variant-label">.checkbox-group — checked, unchecked, indeterminate</p>
+    <p class="variant-label"><span class="ref-class">.checkbox-group</span> — checked, unchecked, indeterminate</p>
     <div class="checkbox-group">
       <label class="checkbox-field">
         <input type="checkbox" checked>
@@ -1481,7 +1484,7 @@
       </label>
     </div>
 
-    <p class="variant-label" style="margin-top: var(--space-600);">.checkbox-field.disabled — disabled state</p>
+    <p class="variant-label" style="margin-top: var(--space-600);"><span class="ref-class">.checkbox-field.disabled</span> — disabled state</p>
     <label class="checkbox-field disabled">
       <input type="checkbox" checked disabled>
       <div class="checkbox-row">
@@ -1493,11 +1496,11 @@
   </section>
 
   <div class="section-divider" id="radio-field">
-    <h2>Radio Field <code>{.radio-field}</code></h2>
+    <h2>Radio Field <code class="ref-class">{.radio-field}</code></h2>
     <p>Radio button with label and optional description — used in groups for single-select</p>
   </div>
   <section class="ds-page-section gap-sm" style="max-width: 600px; align-items: flex-start;">
-    <p class="variant-label">.radio-group — default radio group</p>
+    <p class="variant-label"><span class="ref-class">.radio-group</span> — default radio group</p>
     <div class="radio-group">
       <label class="radio-field">
         <input type="radio" name="plan" checked>
@@ -1525,7 +1528,7 @@
       </label>
     </div>
 
-    <p class="variant-label" style="margin-top: var(--space-600);">.radio-field.disabled — disabled state</p>
+    <p class="variant-label" style="margin-top: var(--space-600);"><span class="ref-class">.radio-field.disabled</span> — disabled state</p>
     <label class="radio-field disabled">
       <input type="radio" name="plan-disabled" disabled>
       <div class="radio-row">
@@ -1537,48 +1540,65 @@
   </section>
 
   <div class="section-divider" id="select-field">
-    <h2>Select Field <code>{.select-field}</code></h2>
+    <h2>Select Field <code class="ref-class">{.select-field}</code></h2>
     <p>Dropdown select with label, description, and error states</p>
   </div>
   <section class="ds-page-section gap-sm" style="max-width: 400px; align-items: flex-start;">
-    <p class="variant-label">.select-field — default</p>
-    <div class="select-field">
+    <p class="variant-label"><span class="ref-class">.select-field</span> — default</p>
+    <div class="select-field" data-value="United States">
       <label class="select-field-label">Country</label>
-      <select>
-        <option>United States</option>
-        <option>Canada</option>
-        <option>United Kingdom</option>
-        <option>Germany</option>
-        <option>Japan</option>
-      </select>
+      <div class="select-trigger-wrap">
+        <button class="select-trigger" type="button">
+          <span class="select-trigger-text">United States</span>
+          <svg class="select-trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#chevron-down"/></svg>
+        </button>
+        <div class="popover select-popover">
+          <div class="popover-item selected" data-value="United States">
+            <span>United States</span>
+            <svg class="popover-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#check"/></svg>
+          </div>
+          <div class="popover-item" data-value="Canada"><span>Canada</span></div>
+          <div class="popover-item" data-value="United Kingdom"><span>United Kingdom</span></div>
+          <div class="popover-item" data-value="Germany"><span>Germany</span></div>
+          <div class="popover-item" data-value="Japan"><span>Japan</span></div>
+        </div>
+      </div>
     </div>
 
-    <p class="variant-label" style="margin-top: var(--space-600);">.select-field.error — with error message</p>
+    <p class="variant-label" style="margin-top: var(--space-600);"><span class="ref-class">.select-field.error</span> — with error message</p>
     <div class="select-field error">
       <label class="select-field-label">Category</label>
-      <select>
-        <option value="" disabled selected>Select a category</option>
-        <option>Design</option>
-        <option>Engineering</option>
-      </select>
+      <div class="select-trigger-wrap">
+        <button class="select-trigger" type="button">
+          <span class="select-trigger-text placeholder">Select a category</span>
+          <svg class="select-trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#chevron-down"/></svg>
+        </button>
+        <div class="popover select-popover">
+          <div class="popover-item" data-value="Design"><span>Design</span></div>
+          <div class="popover-item" data-value="Engineering"><span>Engineering</span></div>
+        </div>
+      </div>
       <span class="select-field-error">Please select a category</span>
     </div>
 
-    <p class="variant-label" style="margin-top: var(--space-600);">.select-field — disabled</p>
-    <div class="select-field">
+    <p class="variant-label" style="margin-top: var(--space-600);"><span class="ref-class">.select-field</span> — disabled</p>
+    <div class="select-field disabled">
       <label class="select-field-label">Role</label>
-      <select disabled>
-        <option>Viewer</option>
-      </select>
+      <div class="select-trigger-wrap">
+        <button class="select-trigger" type="button" disabled>
+          <span class="select-trigger-text">Viewer</span>
+          <svg class="select-trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#chevron-down"/></svg>
+        </button>
+      </div>
     </div>
   </section>
 
   <div class="section-divider" id="switch-field">
-    <h2>Switch Field <code>{.switch-field}</code></h2>
+    <h2>Switch Field <code class="ref-class">{.switch-field}</code></h2>
     <p>Toggle switch with label and optional description</p>
   </div>
   <section class="ds-page-section gap-sm" style="max-width: 400px; align-items: flex-start;">
-    <p class="variant-label">.switch-field — checked</p>
+    <p class="variant-label"><span class="ref-class">.switch-field</span> — checked</p>
     <label class="switch-field">
       <input type="checkbox" checked>
       <div class="switch-row">
@@ -1588,7 +1608,7 @@
       <span class="switch-description">Use dark theme across the app</span>
     </label>
 
-    <p class="variant-label" style="margin-top: var(--space-600);">.switch-field — unchecked</p>
+    <p class="variant-label" style="margin-top: var(--space-600);"><span class="ref-class">.switch-field</span> — unchecked</p>
     <label class="switch-field">
       <input type="checkbox">
       <div class="switch-row">
@@ -1598,7 +1618,7 @@
       <span class="switch-description">Automatically save changes</span>
     </label>
 
-    <p class="variant-label" style="margin-top: var(--space-600);">.switch-field.disabled — disabled</p>
+    <p class="variant-label" style="margin-top: var(--space-600);"><span class="ref-class">.switch-field.disabled</span> — disabled</p>
     <label class="switch-field disabled">
       <input type="checkbox" checked disabled>
       <div class="switch-row">
@@ -1610,49 +1630,29 @@
   </section>
 
   <div class="section-divider" id="search-input">
-    <h2>Search Input <code>{.search-input}</code></h2>
+    <h2>Search Input <code class="ref-class">{.search-input}</code></h2>
     <p>Pill-shaped search field with icon</p>
   </div>
   <section class="ds-page-section gap-sm" style="max-width: 400px; align-items: flex-start;">
-    <p class="variant-label">.search-input — default with placeholder</p>
+    <p class="variant-label"><span class="ref-class">.search-input</span> — default with placeholder</p>
     <div class="search-input">
       <input type="text" placeholder="Search...">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
     </div>
 
-    <p class="variant-label" style="margin-top: var(--space-600);">.search-input.disabled — disabled</p>
+    <p class="variant-label" style="margin-top: var(--space-600);"><span class="ref-class">.search-input.disabled</span> — disabled</p>
     <div class="search-input disabled">
       <input type="text" placeholder="Search..." disabled>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
     </div>
   </section>
 
-  <div class="section-divider" id="icon-button">
-    <h2>Icon Button <code>{.btn-icon}</code></h2>
-    <p>Icon-only buttons in brand, neutral, and subtle variants with two sizes</p>
-  </div>
-  <section class="ds-page-section gap-sm" style="align-items: flex-start;">
-    <p class="variant-label">.btn-icon.btn-brand, .btn-icon.btn-neutral, .btn-icon.btn-subtle — medium</p>
-    <div style="display: flex; gap: var(--space-300); flex-wrap: wrap; align-items: center;">
-      <button class="btn-icon btn-brand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-      <button class="btn-icon btn-neutral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
-      <button class="btn-icon btn-subtle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>
-    </div>
-
-    <p class="variant-label" style="margin-top: var(--space-400);">.btn-icon.btn-sm — small size</p>
-    <div style="display: flex; gap: var(--space-300); flex-wrap: wrap; align-items: center;">
-      <button class="btn-icon btn-brand btn-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-      <button class="btn-icon btn-neutral btn-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
-      <button class="btn-icon btn-subtle btn-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></button>
-    </div>
-  </section>
-
   <div class="section-divider" id="menu">
-    <h2>Menu <code>{.menu}</code></h2>
+    <h2>Menu <code class="ref-class">{.menu}</code></h2>
     <p>Dropdown menu with items, icons, shortcuts, headings, separators, and danger variant</p>
   </div>
   <section class="ds-page-section gap-sm" style="align-items: flex-start;">
-    <p class="variant-label">.menu — with headings, icons, shortcuts, separator, danger item</p>
+    <p class="variant-label"><span class="ref-class">.menu</span> — with headings, icons, shortcuts, separator, danger item</p>
     <div class="menu" style="max-width: 260px;">
       <div class="menu-heading">Account</div>
       <button class="menu-item">
@@ -1673,29 +1673,51 @@
     </div>
   </section>
 
-  <div class="section-divider" id="tag-toggle">
-    <h2>Tag Toggle <code>{.tag-toggle}</code></h2>
-    <p>Toggleable tags for filtering — on state uses brand fill, off state uses tertiary</p>
+  <div class="section-divider" id="popover">
+    <h2>Popover <code class="ref-class">{.popover}</code></h2>
+    <p>Floating picker for selecting from a list of options — replaces default OS pickers</p>
   </div>
   <section class="ds-page-section gap-sm" style="align-items: flex-start;">
-    <p class="variant-label">.tag-toggle-group — mix of .tag-toggle.on and .tag-toggle.off</p>
-    <div class="tag-toggle-group">
-      <button class="tag-toggle on">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        Design
-      </button>
-      <button class="tag-toggle off">Engineering</button>
-      <button class="tag-toggle off">Product</button>
-      <button class="tag-toggle on">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        Marketing
-      </button>
-      <button class="tag-toggle off">Sales</button>
+
+    <p class="variant-label"><span class="ref-class">.popover</span> — default with selected, hover, and danger states</p>
+    <div class="popover">
+      <div class="popover-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#activity"/></svg>
+        <span>Selected</span>
+        <svg class="popover-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#check"/></svg>
+      </div>
+      <div class="popover-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#activity"/></svg>
+        <span>Default</span>
+      </div>
+      <div class="popover-item">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#activity"/></svg>
+        <span>Another option</span>
+      </div>
+      <div class="popover-item danger">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#activity"/></svg>
+        <span>Delete</span>
+      </div>
     </div>
+
+    <p class="variant-label" style="margin-top: var(--space-600);"><span class="ref-class">.popover</span> — minimal without icons</p>
+    <div class="popover">
+      <div class="popover-item">
+        <span>Option A</span>
+        <svg class="popover-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#check"/></svg>
+      </div>
+      <div class="popover-item">
+        <span>Option B</span>
+      </div>
+      <div class="popover-item">
+        <span>Option C</span>
+      </div>
+    </div>
+
   </section>
 
   <div class="section-divider" id="pagination">
-    <h2>Pagination <code>{.pagination}</code></h2>
+    <h2>Pagination <code class="ref-class">{.pagination}</code></h2>
     <p>Page navigation controls</p>
   </div>
   <section class="ds-page-section gap-sm">
@@ -1714,7 +1736,7 @@
   </section>
 
   <div class="section-divider" id="icons">
-    <h2>Icons <code>{.icon-grid}</code></h2>
+    <h2>Icons <code class="ref-class">{.icon-grid}</code></h2>
     <p>287 Feather icons available via SVG sprite sheet</p>
   </div>
   <section class="ds-page-section gap-sm">
@@ -2306,7 +2328,7 @@ export default function AnalogClock({
        ============================================================ -->
 
   <div class="section-divider" id="footer">
-    <h2>Footer <code>{.ds-footer}</code></h2>
+    <h2>Footer <code class="ref-class">{.ds-footer}</code></h2>
     <p>Site footer with branding, social links, and navigation columns</p>
   </div>
 

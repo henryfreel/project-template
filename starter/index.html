@@ -6,10 +6,10 @@
   <title>My New Project</title>
 
   <!-- Simple Design System — hosted on Netlify -->
-  <!-- Replace YOUR_SITE with your Netlify subdomain, e.g. simple-design-system -->
-  <link rel="stylesheet" href="https://YOUR_SITE.netlify.app/css/reset.css">
-  <link rel="stylesheet" href="https://YOUR_SITE.netlify.app/css/tokens.css">
-  <link rel="stylesheet" href="https://YOUR_SITE.netlify.app/css/components.css">
+  <!-- Design system hosted at public-project-starter-web.netlify.app -->
+  <link rel="stylesheet" href="https://public-project-starter-web.netlify.app/css/reset.css">
+  <link rel="stylesheet" href="https://public-project-starter-web.netlify.app/css/tokens.css">
+  <link rel="stylesheet" href="https://public-project-starter-web.netlify.app/css/components.css">
 </head>
 <body>
 
@@ -85,16 +85,24 @@
     <span class="tag secondary">Secondary Tag</span>
   </section>
 
-  <!-- Icons: reference individual SVGs or the sprite from the CDN -->
-  <!-- Individual SVG: <img src="https://YOUR_SITE.netlify.app/icons/heart.svg" alt="heart"> -->
-  <!-- SVG Sprite:
+  <!-- Icons: use the SVG sprite from the CDN at any size via width/height -->
+  <!--
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <use href="https://YOUR_SITE.netlify.app/icons-sprite.svg#heart"></use>
+      <use href="https://public-project-starter-web.netlify.app/icons.svg#heart"></use>
     </svg>
+
+    viewBox always stays "0 0 24 24" — change width/height for different sizes:
+    width="16" height="16"  →  16px
+    width="20" height="20"  →  20px
+    width="32" height="32"  →  32px
+    width="48" height="48"  →  48px
+
+    Or use an individual SVG file (always 24px):
+    <img src="https://public-project-starter-web.netlify.app/icons/heart.svg" alt="heart">
   -->
 
   <!-- Interactive components (theme toggle, dialogs, modals, etc.) -->
-  <script src="https://YOUR_SITE.netlify.app/js/main.js"></script>
+  <script src="https://public-project-starter-web.netlify.app/js/main.js"></script>
 
 </body>
 </html>

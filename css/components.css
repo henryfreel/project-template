@@ -154,12 +154,12 @@ body.overlay-open {
   align-items: center;
   justify-content: center;
   gap: var(--space-200);
-  padding: var(--space-300);
-  border-radius: var(--radius-200);
+  padding: var(--space-300) var(--space-400);
+  border-radius: var(--radius-full);
   border: var(--stroke-border) solid transparent;
   font-family: var(--font-sans);
   font-size: var(--text-body);
-  font-weight: var(--weight-regular);
+  font-weight: var(--weight-semibold);
   line-height: 1;
   cursor: pointer;
   white-space: nowrap;
@@ -173,13 +173,11 @@ body.overlay-open {
 
 .btn-brand {
   background-color: var(--bg-brand);
-  border-color: var(--border-brand);
   color: var(--text-on-brand);
 }
 
 .btn-neutral {
   background-color: var(--bg-neutral-tertiary);
-  border-color: var(--border-neutral);
   color: var(--text-default);
 }
 
@@ -1040,6 +1038,18 @@ body.overlay-open {
   font-weight: var(--weight-regular);
   color: var(--text-secondary);
   vertical-align: middle;
+}
+
+.section-divider h2 code.ref-class {
+  color: var(--blue-500);
+}
+
+.section-divider h2 code.ref-other {
+  color: var(--green-500);
+}
+
+.section-divider h2 code.ref-token {
+  color: var(--yellow-600);
   margin-left: var(--space-200);
 }
 
@@ -1062,6 +1072,18 @@ body.overlay-open {
   margin: 0;
 }
 
+.ref-class {
+  color: var(--blue-500);
+}
+
+.ref-token {
+  color: var(--yellow-600);
+}
+
+.ref-other {
+  color: var(--green-500);
+}
+
 /* ========================================
    Buttons — showcase variants
    ======================================== */
@@ -1079,7 +1101,7 @@ body.overlay-open {
 }
 
 .btn-sm {
-  padding: var(--space-200);
+  padding: var(--space-200) var(--space-300);
   font-size: var(--text-body);
 }
 
@@ -1709,6 +1731,76 @@ body.overlay-open {
 }
 
 /* ========================================
+   Popover
+   ======================================== */
+
+.popover {
+  background-color: var(--bg-default);
+  border: var(--stroke-border) solid var(--border-default);
+  border-radius: var(--radius-200);
+  box-shadow: var(--shadow-200);
+  padding: var(--space-200) var(--space-600);
+  display: flex;
+  flex-direction: column;
+  width: 295px;
+}
+
+.popover-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-300);
+  padding: var(--space-400) 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: var(--weight-semibold);
+  line-height: 1.4;
+  color: var(--text-default);
+  cursor: pointer;
+  border-bottom: var(--stroke-border) solid var(--border-default);
+  transition: background-color 0.15s ease, border-radius 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.popover-item:last-child {
+  border-bottom: none;
+}
+
+.popover-item:hover {
+  background-color: var(--bg-default-hover);
+  border-radius: 6px;
+  border-bottom-color: transparent;
+  box-shadow:
+    8px 0 0 0 var(--bg-default-hover),
+    -8px 0 0 0 var(--bg-default-hover);
+}
+
+.popover-item svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: var(--icon-default);
+}
+
+.popover-item span {
+  flex: 1;
+  min-width: 0;
+}
+
+.popover-item .popover-check {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--icon-default);
+}
+
+.popover-item.danger {
+  color: var(--text-danger);
+}
+
+.popover-item.danger svg {
+  color: var(--text-danger);
+}
+
+/* ========================================
    Pagination
    ======================================== */
 
@@ -1797,7 +1889,7 @@ body.overlay-open {
 .list-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: var(--space-300);
   padding: var(--space-400) 0;
   font-family: var(--font-sans);
   cursor: pointer;
@@ -1824,7 +1916,8 @@ body.overlay-open {
 .list-row-left {
   display: flex;
   align-items: center;
-  gap: var(--space-400);
+  gap: var(--space-300);
+  flex: 1;
   min-width: 0;
 }
 
@@ -1925,13 +2018,14 @@ body.overlay-open {
 
 .ds-table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   font-family: var(--font-sans);
   font-size: var(--text-body-small);
   line-height: 1.4;
   background-color: var(--bg-default);
   border: var(--stroke-border) solid var(--border-default);
-  border-radius: var(--radius-200);
+  border-radius: var(--radius-400);
   overflow: hidden;
 }
 
@@ -1969,6 +2063,45 @@ body.overlay-open {
 
 .ds-table .align-right {
   text-align: right;
+}
+
+/* ========================================
+   Table Header
+   ======================================== */
+
+.ds-table-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-100);
+  padding-bottom: var(--space-400);
+}
+
+.ds-table-header-title {
+  font-family: var(--font-sans);
+  font-size: var(--text-heading);
+  font-weight: var(--weight-semibold);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-default);
+}
+
+.ds-table-header-summary {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+/* ========================================
+   Table Section
+   ======================================== */
+
+.ds-table-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
 }
 
 /* ========================================
@@ -2159,12 +2292,18 @@ body.overlay-open {
   line-height: 1.4;
 }
 
-.select-field select {
+.select-trigger-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.select-trigger {
   appearance: none;
-  -webkit-appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   padding: var(--space-300) var(--space-400);
-  padding-right: var(--space-800);
   font-family: var(--font-sans);
   font-size: var(--text-body);
   color: var(--text-default);
@@ -2172,24 +2311,56 @@ body.overlay-open {
   border: var(--stroke-border) solid var(--border-default);
   border-radius: var(--radius-200);
   cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23757575' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  background-size: 16px;
   transition: border-color 0.15s ease;
+  text-align: left;
 }
 
-.select-field select:focus {
+.select-trigger:focus {
   outline: none;
   border-color: var(--border-brand);
 }
 
-.select-field select:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+.select-trigger-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--icon-tertiary);
+  transition: transform 0.15s ease;
 }
 
-.select-field.error select {
+.select-field.open .select-trigger {
+  border-color: var(--border-brand);
+}
+
+.select-field.open .select-trigger-icon {
+  transform: rotate(180deg);
+}
+
+.select-trigger-text.placeholder {
+  color: var(--text-secondary);
+}
+
+.select-popover {
+  position: absolute;
+  top: calc(100% + var(--space-100));
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 20;
+  display: none;
+}
+
+.select-field.open .select-popover {
+  display: flex;
+}
+
+.select-field.disabled .select-trigger {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.select-field.error .select-trigger {
   border-color: var(--border-danger);
 }
 
@@ -2197,10 +2368,6 @@ body.overlay-open {
   font-size: var(--text-body-small);
   color: var(--text-danger);
   line-height: 1.4;
-}
-
-.select-field select option {
-  font-size: var(--text-body);
 }
 
 /* ========================================
@@ -2334,7 +2501,10 @@ body.overlay-open {
   border-radius: 9999px;
   cursor: pointer;
   transition: background-color 0.15s ease, border-color 0.15s ease;
-  padding: var(--space-300);
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  flex-shrink: 0;
   line-height: 0;
 }
 
@@ -2344,7 +2514,8 @@ body.overlay-open {
 }
 
 .btn-icon.btn-sm {
-  padding: var(--space-200);
+  width: 32px;
+  height: 32px;
 }
 
 .btn-icon.btn-sm svg {
@@ -2354,7 +2525,6 @@ body.overlay-open {
 
 .btn-icon.btn-brand {
   background: var(--bg-brand);
-  border-color: var(--border-brand);
   color: var(--text-on-brand);
 }
 
@@ -2363,9 +2533,8 @@ body.overlay-open {
 }
 
 .btn-icon.btn-neutral {
-  background: var(--bg-default);
-  border-color: var(--border-default);
-  color: var(--text-default);
+  background: var(--bg-neutral-tertiary);
+  color: var(--icon-default);
 }
 
 .btn-icon.btn-neutral:hover {
@@ -2374,8 +2543,7 @@ body.overlay-open {
 
 .btn-icon.btn-subtle {
   background: transparent;
-  border-color: transparent;
-  color: var(--text-default);
+  color: var(--icon-default);
 }
 
 .btn-icon.btn-subtle:hover {
@@ -2937,7 +3105,7 @@ body.overlay-open {
 .color-swatch-var {
   font-family: 'SF Mono', 'Fira Code', Menlo, Consolas, monospace;
   font-size: 11px;
-  color: var(--text-secondary);
+  color: var(--yellow-600);
   line-height: 1.3;
 }
 
@@ -2982,7 +3150,7 @@ body.overlay-open {
 .spacing-label {
   font-family: var(--font-mono);
   font-size: 13px;
-  color: var(--text-default);
+  color: var(--yellow-600);
   white-space: nowrap;
   min-width: 120px;
 }
@@ -3021,7 +3189,7 @@ body.overlay-open {
 .radius-meta {
   font-family: var(--font-mono);
   font-size: 12px;
-  color: var(--text-default);
+  color: var(--yellow-600);
   text-align: center;
 }
 
@@ -3063,7 +3231,7 @@ body.overlay-open {
 .shadow-card-value {
   font-family: var(--font-mono);
   font-size: 10px;
-  color: var(--text-secondary);
+  color: var(--yellow-600);
   text-align: center;
   padding: 0 var(--space-200);
 }
@@ -3093,7 +3261,7 @@ body.overlay-open {
 .stroke-meta {
   font-family: var(--font-mono);
   font-size: 12px;
-  color: var(--text-default);
+  color: var(--yellow-600);
 }
 
 .stroke-meta span {
@@ -3157,7 +3325,7 @@ body.overlay-open {
 .blur-meta {
   font-family: var(--font-mono);
   font-size: 12px;
-  color: var(--text-default);
+  color: var(--yellow-600);
   text-align: center;
 }
 
