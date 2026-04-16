@@ -57,7 +57,7 @@ Header (`.ds-header`), Hero (`.ds-hero`), Panel (`.ds-panel`), Card Grid (`.ds-c
 - **Table:** `.ds-table`, `.ds-table-header`, `.ds-table-section`
 - **Checkbox:** `.checkbox-field`
 - **Radio:** `.radio-field`
-- **Select:** `.select-field` (custom popover-based dropdown, not native `<select>`)
+- **Select:** `.select-field` (custom popover-based dropdown, not native `<select>`). The popover is portaled to `document.body` when open so it escapes `overflow` containers (modals, blades, etc.).
 - **Switch:** `.switch-field`
 - **Search:** `.search-input`
 - **Menu:** `.menu`, `.menu-item`

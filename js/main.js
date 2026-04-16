@@ -240,16 +240,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Custom select fields (popover-based)
+  // Popovers are portaled to document.body when open so they escape
+  // overflow:hidden / overflow:auto containers (modals, blades, etc.).
   document.querySelectorAll('.select-field').forEach(field => {
     const trigger = field.querySelector('.select-trigger');
     const popover = field.querySelector('.select-popover');
     if (!trigger || !popover) return;
 
+    field._dsPopover = popover;
+    field._dsPopoverParent = popover.parentElement;
+
     trigger.addEventListener('click', () => {
       if (field.classList.contains('disabled')) return;
       const wasOpen = field.classList.contains('open');
       closeAllSelects();
-      if (!wasOpen) field.classList.add('open');
+      if (!wasOpen) openSelect(field);
     });
 
     popover.querySelectorAll('.popover-item').forEach(item => {
@@ -279,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
         svg.appendChild(use);
         item.appendChild(svg);
 
-        field.classList.remove('open');
+        closeSelect(field);
         field.classList.remove('error');
         const errorMsg = field.querySelector('.select-field-error');
         if (errorMsg) errorMsg.style.display = 'none';
@@ -287,12 +292,57 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  function openSelect(field) {
+    const popover = field._dsPopover;
+    const trigger = field.querySelector('.select-trigger');
+    if (!popover || !trigger) return;
+
+    field.classList.add('open');
+
+    const rect = trigger.getBoundingClientRect();
+    document.body.appendChild(popover);
+    popover.style.position = 'fixed';
+    popover.style.top = (rect.bottom + 4) + 'px';
+    popover.style.left = rect.left + 'px';
+    popover.style.width = rect.width + 'px';
+    popover.style.zIndex = '1200';
+    popover.style.display = 'flex';
+
+    requestAnimationFrame(() => {
+      const popRect = popover.getBoundingClientRect();
+      if (popRect.bottom > window.innerHeight) {
+        popover.style.top = (rect.top - popRect.height - 4) + 'px';
+      }
+    });
+
+    field._dsScrollHandler = () => closeAllSelects();
+    window.addEventListener('scroll', field._dsScrollHandler, true);
+    window.addEventListener('resize', field._dsScrollHandler);
+  }
+
+  function closeSelect(field) {
+    field.classList.remove('open');
+    const popover = field._dsPopover;
+    const parent = field._dsPopoverParent;
+    if (popover && parent && popover.parentElement === document.body) {
+      parent.appendChild(popover);
+      popover.style.cssText = '';
+    }
+    if (field._dsScrollHandler) {
+      window.removeEventListener('scroll', field._dsScrollHandler, true);
+      window.removeEventListener('resize', field._dsScrollHandler);
+      field._dsScrollHandler = null;
+    }
+  }
+
   function closeAllSelects() {
-    document.querySelectorAll('.select-field.open').forEach(f => f.classList.remove('open'));
+    document.querySelectorAll('.select-field.open').forEach(f => closeSelect(f));
   }
 
   document.addEventListener('click', e => {
-    if (!e.target.closest('.select-field')) closeAllSelects();
+    if (!e.target.closest('.select-field') && !e.target.closest('.select-popover')) {
+      closeAllSelects();
+    }
   });
 
   // Mobile hamburger menu
