@@ -24,6 +24,11 @@
     <span class="toggle-label">Light</span>
   </button>
 
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
   <div class="page-layout">
     <nav class="sidebar-nav" id="sidebar-nav">
       <div class="sidebar-nav-inner">
@@ -1047,11 +1052,11 @@
   <section class="ds-page-section gap-sm">
     <p class="variant-label"><span class="ref-class">.tag</span> — primary with dismiss button</p>
     <div style="display: flex; gap: var(--space-300); flex-wrap: wrap; align-items: center;">
-      <span class="tag tag-brand">Brand<button class="tag-dismiss" aria-label="Remove">&times;</button></span>
-      <span class="tag tag-danger">Danger<button class="tag-dismiss" aria-label="Remove">&times;</button></span>
-      <span class="tag tag-positive">Positive<button class="tag-dismiss" aria-label="Remove">&times;</button></span>
-      <span class="tag tag-warning">Warning<button class="tag-dismiss" aria-label="Remove">&times;</button></span>
-      <span class="tag tag-neutral">Neutral<button class="tag-dismiss" aria-label="Remove">&times;</button></span>
+      <span class="tag tag-brand">Brand<button class="tag-dismiss" aria-label="Remove"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#x"/></svg></button></span>
+      <span class="tag tag-danger">Danger<button class="tag-dismiss" aria-label="Remove"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#x"/></svg></button></span>
+      <span class="tag tag-positive">Positive<button class="tag-dismiss" aria-label="Remove"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#x"/></svg></button></span>
+      <span class="tag tag-warning">Warning<button class="tag-dismiss" aria-label="Remove"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#x"/></svg></button></span>
+      <span class="tag tag-neutral">Neutral<button class="tag-dismiss" aria-label="Remove"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#x"/></svg></button></span>
     </div>
     <p class="variant-label"><span class="ref-class">.tag.secondary</span> — secondary without dismiss</p>
     <div style="display: flex; gap: var(--space-300); flex-wrap: wrap; align-items: center;">
@@ -2076,35 +2081,71 @@
         </div>
         <div class="example-product-details">
           <h2 style="font-size: var(--text-heading-3); font-weight: var(--weight-bold); color: var(--text-default);">Wireless Headphones</h2>
-          <span class="tag" style="align-self: flex-start;">New Arrival</span>
+          <span class="tag tag-brand" style="align-self: flex-start;">New Arrival</span>
           <div class="text-price"><span class="currency">$</span><span class="amount">50</span></div>
           <p style="font-size: var(--text-body); color: var(--text-secondary); line-height: 1.5;">Premium wireless headphones with active noise cancellation and 30-hour battery life.</p>
           <div class="example-product-selects">
-            <div class="select-field">
+            <div class="select-field" data-value="Midnight Black">
               <label class="select-field-label">Color</label>
-              <select>
-                <option>Midnight Black</option>
-                <option>Silver</option>
-                <option>Navy Blue</option>
-              </select>
+              <div class="select-trigger-wrap">
+                <button class="select-trigger" type="button">
+                  <span class="select-trigger-text">Midnight Black</span>
+                  <svg class="select-trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#chevron-down"/></svg>
+                </button>
+                <div class="popover select-popover">
+                  <div class="popover-item selected" data-value="Midnight Black">
+                    <span>Midnight Black</span>
+                    <svg class="popover-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#check"/></svg>
+                  </div>
+                  <div class="popover-item" data-value="Silver"><span>Silver</span></div>
+                  <div class="popover-item" data-value="Navy Blue"><span>Navy Blue</span></div>
+                </div>
+              </div>
             </div>
-            <div class="select-field">
+            <div class="select-field" data-value="Standard">
               <label class="select-field-label">Size</label>
-              <select>
-                <option>Standard</option>
-                <option>Compact</option>
-              </select>
+              <div class="select-trigger-wrap">
+                <button class="select-trigger" type="button">
+                  <span class="select-trigger-text">Standard</span>
+                  <svg class="select-trigger-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#chevron-down"/></svg>
+                </button>
+                <div class="popover select-popover">
+                  <div class="popover-item selected" data-value="Standard">
+                    <span>Standard</span>
+                    <svg class="popover-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#check"/></svg>
+                  </div>
+                  <div class="popover-item" data-value="Compact"><span>Compact</span></div>
+                </div>
+              </div>
             </div>
           </div>
           <button class="btn btn-brand" style="width: 100%;">Add to Cart</button>
-          <div class="ds-accordion">
+          <div class="ds-accordion" style="max-width: 100%;">
             <div class="accordion-item open">
               <button class="accordion-title">
-                Frequently Asked Questions
+                <span>Frequently Asked Questions</span>
                 <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
               </button>
               <div class="accordion-content">
                 <p>Answer the frequently asked question in a simple sentence, a longish paragraph, or even in a list.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-title">
+                <span>Shipping & Returns</span>
+                <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div class="accordion-content">
+                <p>Free shipping on orders over $50. Returns accepted within 30 days of purchase.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-title">
+                <span>Warranty Information</span>
+                <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <div class="accordion-content">
+                <p>All products come with a 1-year limited warranty covering manufacturing defects.</p>
               </div>
             </div>
           </div>
@@ -2124,9 +2165,9 @@
           <div class="example-filter-group">
             <span class="example-filter-title">Keywords</span>
             <div style="display: flex; flex-wrap: wrap; gap: var(--space-200);">
-              <span class="tag">Spring <button class="tag-dismiss" aria-label="Dismiss">&times;</button></span>
-              <span class="tag">Smart <button class="tag-dismiss" aria-label="Dismiss">&times;</button></span>
-              <span class="tag">Modern <button class="tag-dismiss" aria-label="Dismiss">&times;</button></span>
+              <span class="tag tag-brand">Spring <button class="tag-dismiss" aria-label="Dismiss"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#x"/></svg></button></span>
+              <span class="tag tag-brand">Smart <button class="tag-dismiss" aria-label="Dismiss"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#x"/></svg></button></span>
+              <span class="tag tag-brand">Modern <button class="tag-dismiss" aria-label="Dismiss"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="icons.svg#x"/></svg></button></span>
             </div>
           </div>
           <div class="example-filter-group">

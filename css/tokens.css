@@ -344,11 +344,11 @@
   --bg-neutral-tertiary-hover: var(--slate-1000);
 
   /* Background — Brand */
-  --bg-brand: var(--brand-100);
+  --bg-brand: var(--brand-500);
   --bg-brand-hover: var(--brand-300);
   --bg-brand-secondary: var(--brand-700);
   --bg-brand-secondary-hover: var(--brand-500);
-  --bg-brand-tertiary: var(--brand-600);
+  --bg-brand-tertiary: var(--brand-1000);
   --bg-brand-tertiary-hover: var(--brand-800);
 
   /* Background — Positive */
@@ -399,7 +399,7 @@
   --text-brand: var(--brand-100);
   --text-brand-secondary: var(--brand-300);
   --text-brand-tertiary: var(--brand-400);
-  --text-on-brand: var(--brand-900);
+  --text-on-brand: var(--white-1000);
   --text-on-brand-secondary: var(--brand-100);
   --text-on-brand-tertiary: var(--brand-100);
 

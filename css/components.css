@@ -78,12 +78,54 @@
   overflow-x: hidden;
 }
 
+.hamburger {
+  display: none;
+  position: fixed;
+  top: var(--space-300);
+  left: var(--space-300);
+  z-index: 1001;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: var(--stroke-border) solid var(--border-default);
+  border-radius: var(--radius-200);
+  background: var(--bg-default);
+  color: var(--icon-default);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (max-width: 768px) {
+  .hamburger { display: flex; }
   .page-layout {
     grid-template-columns: 1fr;
   }
   .sidebar-nav {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    z-index: 1000;
+    background: var(--bg-default);
+    border-right: var(--stroke-border) solid var(--border-default);
+    box-shadow: var(--shadow-300);
+  }
+  .sidebar-nav.open {
+    display: block;
+    overflow-y: auto;
+  }
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: var(--bg-blanket);
+  }
+  .sidebar-overlay.open {
+    display: block;
   }
 }
 
@@ -1090,8 +1132,12 @@ body.overlay-open {
 
 .btn-subtle {
   background-color: transparent;
-  border: none;
+  border-color: var(--border-default);
   color: var(--text-default);
+}
+
+.btn-subtle:hover {
+  border-color: var(--border-secondary);
 }
 
 .btn-danger {
@@ -1187,79 +1233,111 @@ body.overlay-open {
 .tag {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-200);
-  padding: var(--space-200);
+  gap: 6px;
+  padding: var(--space-200) var(--space-200) var(--space-200) var(--space-300);
   border-radius: var(--radius-200);
   font-family: var(--font-sans);
   font-size: var(--text-body);
+  font-weight: var(--weight-regular);
   line-height: 1;
   white-space: nowrap;
+  transition: background-color 0.15s ease;
 }
 
 .tag-brand {
   background-color: var(--bg-brand);
   color: var(--text-on-brand);
 }
+.tag-brand:hover { background-color: var(--bg-brand-hover); }
 
 .tag-brand.secondary {
   background-color: var(--bg-brand-tertiary);
-  color: var(--text-on-brand-secondary);
+  color: var(--text-on-brand-tertiary);
 }
+.tag-brand.secondary:hover { background-color: var(--bg-brand-tertiary-hover); }
+
+.tag-danger {
+  background-color: var(--bg-danger);
+  color: var(--text-on-danger);
+}
+.tag-danger:hover { background-color: var(--bg-danger-hover); }
+
+.tag-danger.secondary {
+  background-color: var(--bg-danger-secondary);
+  color: var(--text-on-danger-secondary);
+}
+.tag-danger.secondary:hover { background-color: var(--bg-danger-secondary-hover); }
+
+.tag-positive {
+  background-color: var(--bg-positive);
+  color: var(--text-on-positive);
+}
+.tag-positive:hover { background-color: var(--bg-positive-hover); }
+
+.tag-positive.secondary {
+  background-color: var(--bg-positive-secondary);
+  color: var(--text-on-positive-secondary);
+}
+.tag-positive.secondary:hover { background-color: var(--bg-positive-secondary-hover); }
+
+.tag-warning {
+  background-color: var(--bg-warning);
+  color: var(--text-on-warning);
+}
+.tag-warning:hover { background-color: var(--bg-warning-hover); }
+
+.tag-warning.secondary {
+  background-color: var(--bg-warning-secondary);
+  color: var(--text-on-warning-secondary);
+}
+.tag-warning.secondary:hover { background-color: var(--bg-warning-secondary-hover); }
 
 .tag-neutral {
-  background-color: var(--bg-neutral-tertiary);
+  background-color: var(--bg-default-tertiary);
   color: var(--text-default);
 }
+.tag-neutral:hover { background-color: var(--bg-default-tertiary-hover); }
 
 .tag-neutral.secondary {
   background-color: var(--bg-secondary);
-  color: var(--text-secondary);
+  color: var(--text-default);
 }
-
-.tag-danger {
-  background-color: #ec221f;
-  color: #fee9e7;
-}
-
-.tag-danger.secondary {
-  background-color: #fee9e7;
-  color: #900b09;
-}
-
-.tag-positive {
-  background-color: #14ae5c;
-  color: #ebffee;
-}
-
-.tag-positive.secondary {
-  background-color: #ebffee;
-  color: #02542d;
-}
-
-.tag-warning {
-  background-color: #e5a000;
-  color: #fffbeb;
-}
-
-.tag-warning.secondary {
-  background-color: #fffbeb;
-  color: #682d03;
-}
+.tag-neutral.secondary:hover { background-color: var(--bg-secondary-hover); }
 
 .tag .tag-dismiss {
   display: inline-flex;
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-  cursor: pointer;
-  opacity: 0.7;
   align-items: center;
   justify-content: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  flex-shrink: 0;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.tag .tag-dismiss svg {
+  width: 16px;
+  height: 16px;
 }
 
 .tag .tag-dismiss:hover {
-  opacity: 1;
+  opacity: 0.7;
 }
+
+.tag-brand .tag-dismiss { color: var(--icon-on-brand); }
+.tag-brand.secondary .tag-dismiss { color: var(--icon-on-brand-tertiary); }
+.tag-danger .tag-dismiss { color: var(--icon-on-danger); }
+.tag-danger.secondary .tag-dismiss { color: var(--icon-on-danger-secondary); }
+.tag-positive .tag-dismiss { color: var(--icon-on-positive); }
+.tag-positive.secondary .tag-dismiss { color: var(--icon-on-positive-secondary); }
+.tag-warning .tag-dismiss { color: var(--icon-on-warning); }
+.tag-warning.secondary .tag-dismiss { color: var(--icon-on-warning-secondary); }
+.tag-neutral .tag-dismiss { color: var(--icon-default); }
+.tag-neutral.secondary .tag-dismiss { color: var(--icon-default); }
 
 /* ========================================
    Tabs
@@ -2543,11 +2621,13 @@ body.overlay-open {
 
 .btn-icon.btn-subtle {
   background: transparent;
+  border-color: var(--border-default);
   color: var(--icon-default);
 }
 
 .btn-icon.btn-subtle:hover {
   background: var(--bg-default-hover);
+  border-color: var(--border-secondary);
 }
 
 .btn-icon.disabled,
@@ -2639,8 +2719,8 @@ body.overlay-open {
 .tag-toggle {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-200);
-  padding: var(--space-200);
+  gap: 8px;
+  padding: var(--space-200) var(--space-300) var(--space-200) var(--space-300);
   border-radius: var(--radius-200);
   font-family: var(--font-sans);
   font-size: var(--text-body);
@@ -2653,6 +2733,8 @@ body.overlay-open {
 .tag-toggle.on {
   background: var(--bg-brand);
   color: var(--text-on-brand);
+  gap: 6px;
+  padding: var(--space-200) var(--space-300) var(--space-200) var(--space-200);
 }
 
 .tag-toggle.off {
@@ -3407,20 +3489,6 @@ body.overlay-open {
   color: #fecac6;
 }
 
-[data-theme="dark"] .tag-danger.secondary {
-  background-color: #3d0c0a;
-  color: #fecac6;
-}
-
-[data-theme="dark"] .tag-positive.secondary {
-  background-color: #0a3520;
-  color: #a8f0b8;
-}
-
-[data-theme="dark"] .tag-warning.secondary {
-  background-color: #3d2a06;
-  color: #ffd980;
-}
 
 /* ========================================
    Responsive
